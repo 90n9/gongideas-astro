@@ -13,8 +13,11 @@ export const markdownify = (content: string, div?: boolean) => {
 
 // humanize
 export const humanize = (content: string) => {
+  if (!content) {
+    return "";
+  }
   return content
-    ?.replace(/^[\s_]+|[\s_]+$/g, "")
+    .replace(/^[\s_]+|[\s_]+$/g, "")
     .replace(/[_\s]+/g, " ")
     .replace(/[-\s]+/g, " ")
     .replace(/^[a-z]/, function (m) {
