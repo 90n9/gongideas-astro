@@ -23,22 +23,37 @@ const {
 const { theme_switcher }: { theme_switcher: boolean } = config.settings;
 ---
 
-<a class="navbar-brand inline-block" href="/">
+<a
+  class="navbar-brand inline-block"
+  href="/"
+>
   {
     src || srcDarkmode || logo || logo_darkmode ? (
       <>
         <ImageMod
-          alt={title}           class={`inline-block ${theme_switcher && "dark:hidden"}`}           format="webp"           height={logo_height.replace("px", "") * 2}           src={src ? src : logo}           style={{
+          alt={title}
+          class={`inline-block ${theme_switcher && "dark:hidden"}`}
+          format="webp"
+          height={logo_height.replace("px", "") * 2}
+          src={src ? src : logo}
+          style={{
             height: logo_height.replace("px", "") + "px",
             width: logo_width.replace("px", "") + "px",
-          }}           width={logo_width.replace("px", "") * 2}
+          }}
+          width={logo_width.replace("px", "") * 2}
         />
         {theme_switcher && (
           <ImageMod
-            alt={title}             class={"hidden dark:inline-block"}             format="webp"             height={logo_height.replace("px", "") * 2}             src={srcDarkmode ? srcDarkmode : logo_darkmode}             style={{
+            alt={title}
+            class={"hidden dark:inline-block"}
+            format="webp"
+            height={logo_height.replace("px", "") * 2}
+            src={srcDarkmode ? srcDarkmode : logo_darkmode}
+            style={{
               height: logo_height.replace("px", "") + "px",
               width: logo_width.replace("px", "") + "px",
-            }}             width={logo_width.replace("px", "") * 2}
+            }}
+            width={logo_width.replace("px", "") * 2}
           />
         )}
       </>

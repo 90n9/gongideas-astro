@@ -1,8 +1,7 @@
 ---
 title: "Showcase"
 meta_title: "Showcase"
-description: "This is the showcase page"
+description: "Selected experiments that blend product design, tooling, and in-game workflows."
+image: "/images/service-1.png"
 draft: false
 ---
-
-This is the showcase page.

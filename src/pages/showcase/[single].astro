@@ -1,19 +1,18 @@
 ---
 import Base from "@/layouts/Base.astro";
-import PostSingle from "@/layouts/PostSingle.astro";
+import ShowcaseSingle from "@/layouts/ShowcaseSingle.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 
 export async function getStaticPaths() {
-  const BLOG_FOLDER = "blog";
-  const posts = await getSinglePage(BLOG_FOLDER);
+  const SHOWCASE_FOLDER = "showcase";
+  const showcases = await getSinglePage(SHOWCASE_FOLDER);
 
-  const paths = posts.map((post) => ({
+  return showcases.map((post) => ({
     params: {
       single: post.id,
     },
     props: { post },
   }));
-  return paths;
 }
 
 const { post } = Astro.props;
@@ -26,5 +25,5 @@ const { title, meta_title, description, image } = post.data;
   meta_title={meta_title}
   title={title}
 >
-  <PostSingle post={post} />
+  <ShowcaseSingle post={post} />
 </Base>

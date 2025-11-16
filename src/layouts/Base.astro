@@ -56,18 +56,37 @@ const { title, meta_title, description, image, noindex, canonical } =
       )
     }
     <!-- favicon -->
-    <link href={config.site.favicon} rel="shortcut icon" />
+    <link
+      href={config.site.favicon}
+      rel="shortcut icon"
+    />
     <!-- theme meta -->
-    <meta content="astroplate" name="theme-name" />
-    <meta content="#000000" name="msapplication-TileColor" />
     <meta
-      content="#fff"       media="(prefers-color-scheme: light)"       name="theme-color"
+      content="astroplate"
+      name="theme-name"
     />
     <meta
-      content="#000"       media="(prefers-color-scheme: dark)"       name="theme-color"
+      content="#000000"
+      name="msapplication-TileColor"
     />
-    <meta content={Astro.generator} name="generator" />
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta
+      content="#fff"
+      media="(prefers-color-scheme: light)"
+      name="theme-color"
+    />
+    <meta
+      content="#000"
+      media="(prefers-color-scheme: dark)"
+      name="theme-color"
+    />
+    <meta
+      content={Astro.generator}
+      name="generator"
+    />
+    <meta
+      content="text/html; charset=UTF-8"
+      http-equiv="Content-Type"
+    />
 
     <!-- google font css -->
     <AstroFont
@@ -95,7 +114,8 @@ const { title, meta_title, description, image, noindex, canonical } =
 
     <!-- responsive meta -->
     <meta
-      content="width=device-width, initial-scale=1, maximum-scale=5"       name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5"
+      name="viewport"
     />
 
     <!-- title -->
@@ -104,69 +124,101 @@ const { title, meta_title, description, image, noindex, canonical } =
     </title>
 
     <!-- canonical url -->
-    {canonical && <link href={canonical} item-prop="url" rel="canonical" />}
+    {
+      canonical && (
+        <link
+          href={canonical}
+          item-prop="url"
+          rel="canonical"
+        />
+      )
+    }
 
     <!-- noindex robots -->
-    {noindex && <meta content="noindex,nofollow" name="robots" />}
+    {
+      noindex && (
+        <meta
+          content="noindex,nofollow"
+          name="robots"
+        />
+      )
+    }
 
     <!-- meta-description -->
     <meta
       content={plainify(
-        description ? description : config.metadata.meta_description
-      )}       name="description"
+        description ? description : config.metadata.meta_description,
+      )}
+      name="description"
     />
 
     <ClientRouter />
 
     <!-- author from config.json -->
-    <meta content={config.metadata.meta_author} name="author" />
+    <meta
+      content={config.metadata.meta_author}
+      name="author"
+    />
 
     <!-- og-title -->
     <meta
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title
-      )}       property="og:title"
+        meta_title ? meta_title : title ? title : config.site.title,
+      )}
+      property="og:title"
     />
 
     <!-- og-description -->
     <meta
       content={plainify(
-        description ? description : config.metadata.meta_description
-      )}       property="og:description"
+        description ? description : config.metadata.meta_description,
+      )}
+      property="og:description"
     />
-    <meta content="website" property="og:type" />
     <meta
-      content={`${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`}       property="og:url"
+      content="website"
+      property="og:type"
+    />
+    <meta
+      content={`${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`}
+      property="og:url"
     />
 
     <!-- twitter-title -->
     <meta
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title
-      )}       name="twitter:title"
+        meta_title ? meta_title : title ? title : config.site.title,
+      )}
+      name="twitter:title"
     />
 
     <!-- twitter-description -->
     <meta
       content={plainify(
-        description ? description : config.metadata.meta_description
-      )}       name="twitter:description"
+        description ? description : config.metadata.meta_description,
+      )}
+      name="twitter:description"
     />
 
     <!-- og-image -->
     <meta
       content={`${config.site.base_url}${
         image ? image : config.metadata.meta_image
-      }`}       property="og:image"
+      }`}
+      property="og:image"
     />
 
     <!-- twitter-image -->
     <meta
       content={`${config.site.base_url}${
         image ? image : config.metadata.meta_image
-      }`}       name="twitter:image"
+      }`}
+      name="twitter:image"
     />
-    <meta content="summary_large_image" name="twitter:card" />
+    <meta
+      content="summary_large_image"
+      name="twitter:card"
+    />
   </head>
   <body>
     {/* google tag manager noscript */}
