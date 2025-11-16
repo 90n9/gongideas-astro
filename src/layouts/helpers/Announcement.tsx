@@ -75,7 +75,7 @@ const Announcement: React.FC = () => {
       <button
         onClick={handleClose}
         className="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer flex items-center justify-center w-7 h-7 border border-border dark:border-darkmode-border rounded-full text-xl transition-colors duration-200"
-        aria-label="Close announcement"
+        aria-label="ปิดประกาศ"
       >
         &times;
       </button>

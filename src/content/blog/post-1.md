@@ -1,7 +1,7 @@
 ---
-title: "How to build an Application with modern Technology"
+title: "วิธีสร้างแอปพลิเคชันด้วยเทคโนโลยีสมัยใหม่"
 meta_title: ""
-description: "this is meta description"
+description: "คู่มือวางสถาปัตยกรรม ปรับเวิร์กโฟลว์ และจัดการข้อมูลให้รองรับการเติบโต"
 date: 2022-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Application", "Data"]
@@ -10,14 +10,14 @@ tags: ["nextjs", "tailwind"]
 draft: false
 ---
 
-Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+การเริ่มสร้างแอปในยุคปัจจุบันไม่ใช่เรื่องของการเขียนโค้ดเพียงอย่างเดียว แต่คือการออกแบบระบบให้รองรับการเติบโตตั้งแต่วันแรก เราเริ่มจากการแยกบริการเป็นโมดูลเล็ก ๆ ต่อเข้ากับ message queue เพื่อให้แต่ละส่วนสเกลได้อิสระ ก่อนจะต่อยอดด้วย data pipeline ที่เก็บทั้งเหตุการณ์แบบ real-time และชุดข้อมูลสำหรับการวิเคราะห์เชิงลึก
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+เมื่อผสานแคชหลายชั้นกับระบบสังเกตการณ์ที่ชัดเจน เรามองเห็นปัญหาได้เร็วพอจะแก้ไขก่อนผู้ใช้ได้รับผลกระทบ ทีมยังใช้ feature flag เพื่อลองฟีเจอร์ใหม่กับกลุ่มทดลอง และย้อนกลับได้ทันทีหากมีสัญญาณไม่ดี ช่วยให้รอบการทดลองสั้นลงโดยไม่ต้องกังวลเรื่องความเสถียร
 
-## Creative Design
+## แนวทางการออกแบบ
 
-Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+หัวใจสำคัญคือการออกแบบประสบการณ์ผู้ใช้และโครงสร้างข้อมูลไปพร้อมกัน เราใช้ Design Token กลางเพื่อให้ส่วนติดต่อสอดคล้องทุกแพลตฟอร์ม และรองรับการทำงานร่วมกับทีมคอนเทนต์ผ่านระบบ localized copy ที่ดึงมาจาก CMS เดียว เพิ่มเติมด้วยเอกสาร Playbook ที่สรุปการตั้งชื่อคอมโพเนนต์และมาตรฐานการเข้าถึง
 
-> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+> ทุกฟีเจอร์ต้องตอบโจทย์คนใช้จริง ไม่ใช่แค่ดูดีในดีไซน์ เราจึงประเมินด้วยข้อมูลจากการใช้งานจริงเสมอ
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+ท้ายที่สุด การสื่อสารที่โปร่งใสทำให้ทีมตัดสินใจได้เร็วขึ้น เมื่อแต่ละสเต็กมีลอจิกและเครื่องมือสนับสนุนที่เหมาะสม แอปก็พร้อมขยับขยายโดยไม่รู้สึกหนักหน่วง

@@ -1,7 +1,7 @@
 ---
-title: "How to build an Application with modern Technology"
+title: "ออกแบบซอฟต์แวร์ให้พร้อมเติบโตตั้งแต่วันแรก"
 meta_title: ""
-description: "this is meta description"
+description: "แนวคิดวางแผนสถาปัตยกรรม การตรวจวัด และกระบวนการรีแฟกเตอร์อย่างเป็นระบบ"
 date: 2022-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Software"]
@@ -10,14 +10,14 @@ tags: ["software", "tailwind"]
 draft: false
 ---
 
-Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+โปรเจกต์ที่ดีเริ่มจากการทำความเข้าใจขอบเขต และเตรียมพื้นที่ให้การเปลี่ยนแปลงเกิดขึ้นได้ง่าย เราเลือกใช้สถาปัตยกรรมแบบโมดูลาร์ที่แบ่งโดเมนออกเป็นเลเยอร์ชัดเจน เพื่อให้แต่ละทีม deploy ได้ด้วยตนเอง พร้อมเครื่องมือทดสอบอัตโนมัติที่สะท้อนผลลัพธ์ภายในไม่กี่นาที
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+การสังเกตการณ์คือหัวใจของการรีแฟกเตอร์ เราจัดเก็บสัญญาณที่สำคัญทั้งหมด เช่น error budget, อัตราการตอบสนอง และ feedback จากผู้ใช้ เพื่อให้ทุกการตัดสินใจมีข้อมูลรองรับ ทั้งยังช่วยให้การสื่อสารระหว่างทีมโปรดักต์และวิศวกรเป็นไปในทิศทางเดียวกัน
 
-## Creative Design
+## แนวทางการออกแบบ
 
-Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+แนวคิด Experience-driven Development ทำให้เราพิจารณาทั้งการใช้งานและข้อจำกัดของระบบพร้อมกัน เราระบุ Scenario สำคัญล่วงหน้า สร้างชุด UI Pattern ที่นำกลับมาใช้ซ้ำได้ และเขียนเอกสารประกอบว่าทำไมจึงตัดสินใจเช่นนั้น ช่วยให้ผู้มาใหม่เข้าใจบริบทได้รวดเร็ว
 
-> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+> ทุกครั้งที่รีแฟกเตอร์ เราต้องตอบได้ว่าผลลัพธ์ส่งเสริมประสบการณ์ผู้ใช้และคุณภาพระบบจริงหรือไม่
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+เมื่อทั้งคนและเครื่องมือทำงานสอดคล้องกัน ทีมก็สามารถส่งมอบซอฟต์แวร์ที่ยืดหยุ่นและไวต่อการเปลี่ยนแปลงได้อย่างมั่นใจ

@@ -2,49 +2,49 @@
 # Banner
 banner:
   title: "GongIdeas"
-  content: "A personal blog about software engineering and game development."
+  content: "บล็อกส่วนตัวที่บันทึกเรื่องราววิศวกรรมซอฟต์แวร์และการพัฒนาเกม"
   image: "/images/banner.png"
   button:
     enable: false
-    label: "Get Started For Free"
+    label: "เริ่มต้นใช้ฟรี"
     link: "https://github.com/zeon-studio/astroplate"
 
 # Showcase section
 showcases:
   enable: true
-  title: "Showcases"
-  description: "A few builds that capture how we experiment with design systems, product flows, and internal tools."
+  title: "ผลงานเด่น"
+  description: "ผลงานทดลองที่สะท้อนการออกแบบระบบ การวางผังผลิตภัณฑ์ และการสร้างเครื่องมือภายในหลากหลายรูปแบบ"
   button:
     enable: true
-    label: "View all showcases"
+    label: "ดูผลงานทั้งหมด"
     link: "/showcase"
   items:
-    - title: "Backend Insights Dashboard"
-      description: "Operational metrics dashboard powered by Astro + Supabase with inline status digests."
+    - title: "แดชบอร์ดข้อมูลเชิงลึกฝั่ง Backend"
+      description: "แดชบอร์ดติดตามตัวชี้วัดระบบที่ขับเคลื่อนด้วย Astro + Supabase พร้อมสรุปสถานะที่อ่านง่าย"
       image: "/images/service-1.png"
       link: "/showcase"
       tags:
-        - "Analytics"
+        - "การวิเคราะห์"
         - "Astro"
-    - title: "World Builder Toolkit"
-      description: "Procedural content tools that sit inside Godot to bootstrap terrain and quest data structures."
+    - title: "ชุดเครื่องมือ World Builder"
+      description: "เครื่องมือสร้างคอนเทนต์แบบ Procedural ภายใน Godot เพื่อปูพื้นภูมิประเทศและโครงภารกิจอย่างรวดเร็ว"
       image: "/images/service-2.png"
       link: "/showcase"
       tags:
-        - "Game Dev"
-        - "Tools"
-    - title: "Docs Theme Playground"
-      description: "Typography-first documentation shell featuring contextual navigation and custom MDX blocks."
+        - "พัฒนาเกม"
+        - "เครื่องมือ"
+    - title: "สนามทดลองธีมเอกสาร"
+      description: "ต้นแบบหน้าเอกสารเน้นตัวอักษรที่มาพร้อมระบบนำทางตามบริบทและบล็อก MDX ปรับแต่งได้"
       image: "/images/service-3.png"
       link: "/showcase"
       tags:
-        - "Design"
+        - "ออกแบบ"
         - "MDX"
 
 # Latest blog section
 latest_posts:
   enable: true
-  title: "Latest articles"
-  description: "Notes from the dev diary covering software engineering, game design, and everything we learn in between."
+  title: "บทความล่าสุด"
+  description: "สมุดบันทึกการทำงานที่เล่าทั้งวิศวกรรมซอฟต์แวร์ การออกแบบเกม และบทเรียนที่ได้ระหว่างทาง"
   limit: 3
 ---

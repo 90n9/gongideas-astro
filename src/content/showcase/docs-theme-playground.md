@@ -1,28 +1,28 @@
 ---
-title: "Docs Theme Playground"
-meta_title: "Docs Theme Playground"
-description: "Typography-first documentation shell featuring contextual navigation and custom MDX blocks."
+title: "สนามทดลองธีมเอกสาร"
+meta_title: "สนามทดลองธีมเอกสาร"
+description: "เปลือกหน้าเอกสารที่ให้ความสำคัญกับตัวอักษร ระบบนำทางตามบริบท และบล็อก MDX แบบกำหนดเอง"
 date: 2023-03-12
 image: "/images/service-3.png"
 author: "GongIdeas"
 categories:
-  - "Design"
-  - "Documentation"
+  - "ออกแบบ"
+  - "เอกสาร"
 tags:
   - "MDX"
-  - "Typography"
-  - "Theme"
+  - "ตัวอักษร"
+  - "ธีม"
 draft: false
 ---
 
-This playground explores how far we can push MDX shortcodes and typography scales inside Astro without sacrificing performance. Every component is theme-aware, so visitors can inspect contrast ratios and font usage in both light and dark modes.
+เรานำโปรเจ็กต์นี้มาทดลองว่าระบบ MDX shortcode และสเกลของตัวอักษรใน Astro ไปได้ไกลแค่ไหนโดยไม่ลดทอนประสิทธิภาพ ทุกคอมโพเนนต์รับรู้สถานะธีม จึงสามารถตรวจสอบค่า Contrast และการใช้งานฟอนต์ทั้งโหมดสว่างและมืดได้ตามจริง
 
-### Components
+### ส่วนประกอบ
 
-- Multi-column navigation tree that mirrors the route layout.
-- Callout blocks that promote custom MDX shortcodes such as `<Notice>` and `<Video>`.
-- Playground panel that displays spacing tokens and TypeScale baselines.
+- ต้นไม้นำทางหลายคอลัมน์ที่สะท้อนโครงสร้างเส้นทางจริง
+- บล็อก Callout ที่โชว์ shortcode แบบกำหนดเอง เช่น `<Notice>` และ `<Video>`
+- แผง Playground ที่แสดง Spacing Token และฐาน TypeScale ให้ปรับใช้ง่าย
 
-### Outcome
+### ผลลัพธ์
 
-The experiment gave us a reusable docs template that we now reach for whenever we need to publish internal runbooks or API notes.
+สุดท้ายเราได้เทมเพลตเอกสารแบบนำกลับใช้ได้ทันที เหมาะสำหรับเผยแพร่ Runbook ภายในหรือบันทึก API โดยไม่ต้องเริ่มจากศูนย์

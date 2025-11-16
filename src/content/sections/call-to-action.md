@@ -1,10 +1,10 @@
 ---
 enable: true
-title: "Ready to build your next project with Astro?"
+title: "พร้อมสร้างโปรเจ็กต์ถัดไปด้วย Astro แล้วหรือยัง?"
 image: "/images/call-to-action.png"
-description: "Experience the future of web development with Astroplate and Astro. Build lightning-fast static sites with ease and flexibility."
+description: "สัมผัสการพัฒนาเว็บยุคใหม่ด้วย Astroplate และ Astro สร้างเว็บไซต์ความเร็วสูงได้ง่าย ยืดหยุ่น และดูแลสะดวก"
 button:
   enable: true
-  label: "Get Started Now"
+  label: "เริ่มต้นทันที"
   link: "https://github.com/zeon-studio/astroplate"
 ---

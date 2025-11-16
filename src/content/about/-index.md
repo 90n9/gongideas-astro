@@ -1,9 +1,11 @@
 ---
-title: "Hey, I am John Doe!"
-meta_title: "About"
-description: "this is meta description"
+title: "สวัสดี ผมคือ John Doe!"
+meta_title: "เกี่ยวกับ"
+description: "คนทำบล็อก GongIdeas ที่ชอบบันทึกเส้นทางการพัฒนาซอฟต์แวร์และเกม"
 image: "/images/avatar.png"
 draft: false
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis illum nesciunt commodi vel nisi ut alias excepturi ipsum, totam, labore tempora, odit ex iste tempore sed. Fugit voluptatibus perspiciatis assumenda nulla ad nihil, omnis vel, doloremque sit quam autem optio maiores, illum eius facilis et quo consectetur provident dolor similique! Enim voluptatem dicta expedita veritatis repellat dolorum impedit, provident quasi at.
+ผมเป็นวิศวกรซอฟต์แวร์ที่เติบโตมาพร้อมความหลงใหลในการเล่าเรื่อง ผ่าน GongIdeas จึงนำประสบการณ์ทั้งการสร้างระบบหลังบ้าน เกมอินดี้ และเครื่องมือพัฒนามาเล่าสู่กันฟังแบบเป็นกันเอง ทุกบทความเกิดจากสิ่งที่ได้ลองผิดลองถูกจริง ตั้งแต่การออกแบบสถาปัตยกรรม การจัดการทีมเล็ก ๆ ไปจนถึงการปรับจูนสมดุลของเกมเพลย์
+
+นอกจากงานพัฒนาซอฟต์แวร์ ผมยังสนุกกับการออกแบบเวิร์กโฟลว์และสร้างเครื่องมือที่ช่วยให้ทีมทำงานได้เร็วขึ้น ความตั้งใจของผมคืออยากให้ GongIdeas เป็นพื้นที่ที่แชร์บทเรียนอย่างตรงไปตรงมา เพื่อให้ทั้งผู้เริ่มต้นและผู้ที่อยู่ในสายงานเดียวกันหยิบไปต่อยอดได้ทันที

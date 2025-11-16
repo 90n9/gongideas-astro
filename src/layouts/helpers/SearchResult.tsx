@@ -251,13 +251,13 @@ const SearchResult = ({
                 ></path>
               </svg>
               <p className="mt-4">
-                No results for &quot;<strong>{searchString}</strong>&quot;
+                ไม่พบผลลัพธ์สำหรับ &quot;<strong>{searchString}</strong>&quot;
               </p>
             </div>
           )}
         </div>
       ) : (
-        <div className="py-8 text-center">Type something to search...</div>
+        <div className="py-8 text-center">พิมพ์คำที่ต้องการค้นหา...</div>
       )}
     </div>
   );
