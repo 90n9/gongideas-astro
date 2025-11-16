@@ -33,6 +33,52 @@ yarn run dev
 yarn run build
 ```
 
+## 🧩 Adding Content
+
+### ✍️ Create a New Blog Post
+
+1. Add a new Markdown file under `src/content/blog/` (for example `src/content/blog/my-new-post.md`). Use a kebab-case name so the slug stays clean.
+2. Copy the frontmatter template below and update the fields. `draft: true` keeps the post hidden until you are ready to publish.
+
+```md
+---
+title: "Post title"
+meta_title: "SEO title (optional)"
+description: "One sentence summary"
+date: 2024-01-12T00:00:00Z
+image: "/images/image-placeholder.png"
+categories: ["engineering", "culture"]
+author: "GongIdeas"
+tags: ["astro", "productivity"]
+draft: false
+---
+```
+
+3. Write the article body in Markdown (MDX works too) underneath the frontmatter.
+4. Run `yarn dev` to preview or `yarn build` for a production check; Astro will automatically pick up anything inside `src/content/blog`.
+
+### 🌟 Create a New Showcase Entry
+
+1. Create a Markdown file in `src/content/showcase/` (for example `src/content/showcase/release-dashboard.md`).
+2. Fill in the showcase schema:
+
+```md
+---
+title: "Project name"
+meta_title: "SEO title (optional)"
+description: "Short blurb that appears on cards"
+date: 2024-01-12
+image: "/images/service-1.png"
+author: "GongIdeas"
+categories: ["internal tools"]
+tags: ["astro", "supabase"]
+draft: false
+---
+```
+
+3. Document the highlights using Markdown headings, lists, and images just like the examples already in `src/content/showcase`.
+4. Preview with `yarn dev` to confirm the showcase renders correctly on the `/showcase` page and homepage sections.
+
 <!-- reporting issue -->
 
 ## 🐞 Reporting Issues
