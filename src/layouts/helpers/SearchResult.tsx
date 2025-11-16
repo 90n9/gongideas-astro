@@ -88,7 +88,10 @@ const SearchResult = ({
     const parts = text?.split(new RegExp(`(${substring})`, "gi"));
     return parts?.map((part, index) =>
       part.toLowerCase() === substring.toLowerCase() ? (
-        <span key={index} className="underline">
+        <span
+          key={index}
+          className="underline"
+        >
           {part}
         </span>
       ) : (
@@ -132,7 +135,10 @@ const SearchResult = ({
         <div className="search-result">
           {finalResult.length > 0 ? (
             finalResult.map((result) => (
-              <div className="search-result-group" key={result.group}>
+              <div
+                className="search-result-group"
+                key={result.group}
+              >
                 <p className="search-result-group-title">
                   {titleify(result.group)}
                 </p>

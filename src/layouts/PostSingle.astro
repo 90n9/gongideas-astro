@@ -27,12 +27,20 @@ const { title, description, author, categories, image, date, tags } = post.data;
           image && (
             <div class="mb-10">
               <ImageMod
-                alt={title}                 class="w-full rounded"                 format="webp"                 height={500}                 src={image}                 width={1200}
+                alt={title}
+                class="w-full rounded"
+                format="webp"
+                height={500}
+                src={image}
+                width={1200}
               />
             </div>
           )
         }
-        <h1 class="h2 mb-4" set:html={markdownify(title)} />
+        <h1
+          class="h2 mb-4"
+          set:html={markdownify(title)}
+        />
         <ul class="mb-4">
           <li class="mr-4 inline-block">
             <a href={`/authors/${slugify(author)}`}>
@@ -81,11 +89,16 @@ const { title, description, author, categories, image, date, tags } = post.data;
             <h5 class="mr-3">Share :</h5>
             <Share
               className="social-icons"
-              description={description}               slug={post.id}               title={title}
+              description={description}
+              slug={post.id}
+              title={title}
             />
           </div>
         </div>
-        <Disqus className="mt-20" client:load />
+        <Disqus
+          className="mt-20"
+          client:load
+        />
       </article>
     </div>
 

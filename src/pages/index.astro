@@ -29,15 +29,20 @@ const latestPosts =
       <div class="row justify-center">
         <div class="lg:col-7 md:col-9 mb-8 text-center">
           <h1
-            class="mb-4 text-h3 lg:text-h1"             set:html={markdownify(banner.title)}
+            class="mb-4 text-h3 lg:text-h1"
+            set:html={markdownify(banner.title)}
           />
-          <p class="mb-8" set:html={markdownify(banner.content)} />
+          <p
+            class="mb-8"
+            set:html={markdownify(banner.content)}
+          />
           {
             banner.button.enable && (
               <a
                 class="btn btn-primary"
                 href={banner.button.link}
-                rel="noopener"                 target={
+                rel="noopener"
+                target={
                   banner.button.link.startsWith("http") ? "_blank" : "_self"
                 }
               >
@@ -50,7 +55,11 @@ const latestPosts =
           banner.image && (
             <div class="col-12">
               <ImageMod
-                alt="banner"                 format="webp"                 height={380}                 src={banner.image}                 width={1200}
+                alt="banner"
+                format="webp"
+                height={380}
+                src={banner.image}
+                width={1200}
               />
             </div>
           )
@@ -62,38 +71,54 @@ const latestPosts =
 
   <!-- Features -->
   {
-    features && features.map((feature, index: number) => (
-      <section class={`section-sm ${index % 2 === 0 && "bg-gradient"}`}>
-        <div class="container">
-          <div class="row items-center justify-between">
-            <div
-              class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}
-            >
-              <ImageMod
-                alt={feature.title}                 format="webp"                 height={480}                 src={feature.image}                 width={520}
-              />
-            </div>
-            <div class={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"}`}>
-              <h2 class="mb-4" set:html={markdownify(feature.title)} />
-              <p class="mb-8 text-lg" set:html={markdownify(feature.content)} />
-              <ul>
-                {feature.bulletpoints.map((bullet: string) => (
-                  <li class="relative mb-4 pl-6">
-                    <FaCheck className={"absolute left-0 top-1.5"} />
-                    <span set:html={markdownify(bullet)} />
-                  </li>
-                ))}
-              </ul>
-              {feature.button.enable && (
-                <a class="btn btn-primary mt-5" href={feature.button.link}>
-                  {feature.button.label}
-                </a>
-              )}
+    features &&
+      features.map((feature, index: number) => (
+        <section class={`section-sm ${index % 2 === 0 && "bg-gradient"}`}>
+          <div class="container">
+            <div class="row items-center justify-between">
+              <div
+                class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}
+              >
+                <ImageMod
+                  alt={feature.title}
+                  format="webp"
+                  height={480}
+                  src={feature.image}
+                  width={520}
+                />
+              </div>
+              <div
+                class={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"}`}
+              >
+                <h2
+                  class="mb-4"
+                  set:html={markdownify(feature.title)}
+                />
+                <p
+                  class="mb-8 text-lg"
+                  set:html={markdownify(feature.content)}
+                />
+                <ul>
+                  {feature.bulletpoints.map((bullet: string) => (
+                    <li class="relative mb-4 pl-6">
+                      <FaCheck className={"absolute left-0 top-1.5"} />
+                      <span set:html={markdownify(bullet)} />
+                    </li>
+                  ))}
+                </ul>
+                {feature.button.enable && (
+                  <a
+                    class="btn btn-primary mt-5"
+                    href={feature.button.link}
+                  >
+                    {feature.button.label}
+                  </a>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    ))
+        </section>
+      ))
   }
   <!-- /Features -->
 
@@ -104,51 +129,62 @@ const latestPosts =
         <div class="container">
           <div class="row items-end justify-between gap-y-6">
             <div class="md:col-8">
-              <h2 class="mb-4" set:html={markdownify(showcases.title)} />
-              <p class="text-lg" set:html={markdownify(showcases.description)} />
+              <h2
+                class="mb-4"
+                set:html={markdownify(showcases.title)}
+              />
+              <p
+                class="text-lg"
+                set:html={markdownify(showcases.description)}
+              />
             </div>
-            {
-              showcases.button?.enable && (
-                <div class="md:col-auto text-left md:text-right">
-                  <a class="btn btn-outline-primary" href={showcases.button.link}>
-                    {showcases.button.label}
-                  </a>
-                </div>
-              )
-            }
+            {showcases.button?.enable && (
+              <div class="md:col-auto text-left md:text-right">
+                <a
+                  class="btn btn-outline-primary"
+                  href={showcases.button.link}
+                >
+                  {showcases.button.label}
+                </a>
+              </div>
+            )}
           </div>
           <div class="row mt-10">
-            {
-              showcases.items.map((item) => (
-                <div class="mb-10 md:col-6 lg:col-4">
-                  <div class="h-full rounded-2xl border border-border bg-body p-6 shadow-sm dark:border-darkmode-border dark:bg-darkmode-body">
-                    <ImageMod
-                      alt={item.title}                       class="mb-6 w-full rounded-lg bg-light dark:bg-darkmode-light"                       format="webp"                       height={320}                       src={item.image}                       width={520}
-                    />
-                    <h3 class="mb-3">
-                      <a href={item.link}>{item.title}</a>
-                    </h3>
-                    <p class="mb-5 text-base text-text dark:text-darkmode-text">
-                      {item.description}
-                    </p>
-                    {
-                      item.tags.length > 0 && (
-                        <ul class="mb-6 flex flex-wrap gap-2">
-                          {item.tags.map((tag) => (
-                            <li class="rounded-full border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wide dark:border-darkmode-border">
-                              {tag}
-                            </li>
-                          ))}
-                        </ul>
-                      )
-                    }
-                    <a class="btn btn-sm btn-outline-primary" href={item.link}>
-                      View project
-                    </a>
-                  </div>
+            {showcases.items.map((item) => (
+              <div class="mb-10 md:col-6 lg:col-4">
+                <div class="h-full rounded-2xl border border-border bg-body p-6 shadow-sm dark:border-darkmode-border dark:bg-darkmode-body">
+                  <ImageMod
+                    alt={item.title}
+                    class="mb-6 w-full rounded-lg bg-light dark:bg-darkmode-light"
+                    format="webp"
+                    height={320}
+                    src={item.image}
+                    width={520}
+                  />
+                  <h3 class="mb-3">
+                    <a href={item.link}>{item.title}</a>
+                  </h3>
+                  <p class="mb-5 text-base text-text dark:text-darkmode-text">
+                    {item.description}
+                  </p>
+                  {item.tags.length > 0 && (
+                    <ul class="mb-6 flex flex-wrap gap-2">
+                      {item.tags.map((tag) => (
+                        <li class="rounded-full border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wide dark:border-darkmode-border">
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <a
+                    class="btn btn-sm btn-outline-primary"
+                    href={item.link}
+                  >
+                    View project
+                  </a>
                 </div>
-              ))
-            }
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -163,23 +199,30 @@ const latestPosts =
         <div class="container">
           <div class="row items-end justify-between gap-y-6">
             <div class="md:col-8">
-              <h2 class="mb-4" set:html={markdownify(latest_posts.title)} />
-              <p class="text-lg" set:html={markdownify(latest_posts.description)} />
+              <h2
+                class="mb-4"
+                set:html={markdownify(latest_posts.title)}
+              />
+              <p
+                class="text-lg"
+                set:html={markdownify(latest_posts.description)}
+              />
             </div>
             <div class="md:col-auto text-left md:text-right">
-              <a class="btn btn-outline-primary" href="/blog">
+              <a
+                class="btn btn-outline-primary"
+                href="/blog"
+              >
                 View all posts
               </a>
             </div>
           </div>
           <div class="row mt-10">
-            {
-              latestPosts.map((post) => (
-                <div class="mb-14 md:col-6 lg:col-4">
-                  <BlogCard data={post} />
-                </div>
-              ))
-            }
+            {latestPosts.map((post) => (
+              <div class="mb-14 md:col-6 lg:col-4">
+                <BlogCard data={post} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

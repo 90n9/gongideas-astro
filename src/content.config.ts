@@ -74,9 +74,15 @@ const contactCollection = defineCollection({
 const showcaseCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/showcase" }),
   schema: z.object({
-    ...commonFields,
+    title: z.string(),
+    meta_title: z.string().optional(),
+    description: z.string().optional(),
+    date: z.date().optional(),
+    image: z.string().optional(),
+    author: z.string().default("Admin"),
     categories: z.array(z.string()).default(["Showcase"]),
     tags: z.array(z.string()).default(["featured"]),
+    draft: z.boolean().optional(),
   }),
 });
 
@@ -125,19 +131,21 @@ const homepageCollection = defineCollection({
         limit: z.number().default(3),
       })
       .optional(),
-    features: z.array(
-      z.object({
-        title: z.string(),
-        image: z.string(),
-        content: z.string(),
-        bulletpoints: z.array(z.string()),
-        button: z.object({
-          enable: z.boolean(),
-          label: z.string(),
-          link: z.string(),
+    features: z
+      .array(
+        z.object({
+          title: z.string(),
+          image: z.string(),
+          content: z.string(),
+          bulletpoints: z.array(z.string()),
+          button: z.object({
+            enable: z.boolean(),
+            label: z.string(),
+            link: z.string(),
+          }),
         }),
-      }),
-    ).optional(),
+      )
+      .optional(),
   }),
 });
 

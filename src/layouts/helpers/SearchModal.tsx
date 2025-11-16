@@ -123,8 +123,14 @@ const SearchModal = () => {
   }, [searchString]);
 
   return (
-    <div id="searchModal" className="search-modal">
-      <div id="searchModalOverlay" className="search-modal-overlay" />
+    <div
+      id="searchModal"
+      className="search-modal"
+    >
+      <div
+        id="searchModalOverlay"
+        className="search-modal-overlay"
+      />
       <div className="search-wrapper">
         <div className="search-wrapper-header">
           <label
@@ -172,7 +178,10 @@ const SearchModal = () => {
             autoComplete="off"
           />
         </div>
-        <SearchResult searchResult={searchResult} searchString={searchString} />
+        <SearchResult
+          searchResult={searchResult}
+          searchString={searchString}
+        />
         <div className="search-wrapper-footer">
           <span className="flex items-center">
             <kbd>

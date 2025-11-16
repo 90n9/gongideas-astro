@@ -15,7 +15,10 @@ if (aboutIndex.data.draft) {
 ---
 
 <Base
-  description={description}   image={image}   meta_title={meta_title}   title={title}
+  description={description}
+  image={image}
+  meta_title={meta_title}
+  title={title}
 >
   <section class="section-sm">
     <div class="container">
@@ -24,11 +27,19 @@ if (aboutIndex.data.draft) {
           {
             image && (
               <ImageMod
-                alt={title}                 class="mx-auto mb-6 rounded-lg"                 format="webp"                 height={200}                 src={image}                 width={200}
+                alt={title}
+                class="mx-auto mb-6 rounded-lg"
+                format="webp"
+                height={200}
+                src={image}
+                width={200}
               />
             )
           }
-          <h2 class="h3 mb-6" set:html={markdownify(title)} />
+          <h2
+            class="h3 mb-6"
+            set:html={markdownify(title)}
+          />
           <div class="content">
             <Content />
           </div>

@@ -2,6 +2,10 @@
 
 <p align=center>This is the source code for my personal blog, <a href="https://gongideas.com">gongideas.com</a>. I write about software engineering and game development.</p>
 
+## 🙏 Credits
+
+This website is built on top of the [Astroplate](https://github.com/zeon-studio/astroplate) theme by Zeon Studio.
+
 ## 🚀 Getting Started
 
 ### 📦 Dependencies

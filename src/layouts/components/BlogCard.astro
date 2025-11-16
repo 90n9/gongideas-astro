@@ -17,7 +17,12 @@ const { title, image, date, author, categories } = data.data;
   {
     image && (
       <ImageMod
-        alt={title}         class="mb-6 w-full rounded"         format="webp"         height={230}         src={image}         width={445}
+        alt={title}
+        class="mb-6 w-full rounded"
+        format="webp"
+        height={230}
+        src={image}
+        width={445}
       />
     )
   }
@@ -47,7 +52,10 @@ const { title, image, date, author, categories } = data.data;
     {date && <li class="inline-block">{dateFormat(date)}</li>}
   </ul>
   <p class="mb-6">{plainify(data.body?.slice(0, Number(summary_length)))}</p>
-  <a class="btn btn-outline-primary btn-sm" href={`/${blog_folder}/${data.id}`}>
+  <a
+    class="btn btn-outline-primary btn-sm"
+    href={`/${blog_folder}/${data.id}`}
+  >
     read more
   </a>
 </div>

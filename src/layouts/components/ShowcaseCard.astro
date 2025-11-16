@@ -1,0 +1,69 @@
+---
+import config from "@/config/config.json";
+import dateFormat from "@/lib/utils/dateFormat";
+import { humanize, plainify } from "@/lib/utils/textConverter";
+import ImageMod from "./ImageMod.astro";
+
+const { summary_length }: { summary_length: number } = config.settings;
+const SHOWCASE_FOLDER = "showcase";
+const { data } = Astro.props;
+const { title, image, date, author, categories = [], tags = [] } = data.data;
+---
+
+<div class="bg-body p-6 dark:bg-darkmode-body">
+  {
+    image && (
+      <ImageMod
+        alt={title}
+        class="mb-6 w-full rounded"
+        format="webp"
+        height={230}
+        src={image}
+        width={445}
+      />
+    )
+  }
+  <h4 class="mb-3">
+    <a href={`/${SHOWCASE_FOLDER}/${data.id}`}>
+      {title}
+    </a>
+  </h4>
+  <ul class="mb-4 text-sm text-text-light dark:text-darkmode-text">
+    <li class="mr-4 inline-block">
+      <span>
+        {humanize(author)}
+      </span>
+    </li>
+    {
+      categories.length > 0 && (
+        <li class="mr-4 inline-block">
+          {categories.map((category: string, index: number) => (
+            <span>
+              {humanize(category)}
+              {index !== categories.length - 1 && ","}
+            </span>
+          ))}
+        </li>
+      )
+    }
+    {date && <li class="inline-block">{dateFormat(date)}</li>}
+  </ul>
+  <p class="mb-6">{plainify(data.body?.slice(0, Number(summary_length)))}</p>
+  {
+    tags.length > 0 && (
+      <div class="mb-6 flex flex-wrap gap-2">
+        {tags.map((tag: string) => (
+          <span class="rounded-full bg-light px-3 py-1 text-xs font-semibold uppercase tracking-wide dark:bg-darkmode-light">
+            {humanize(tag)}
+          </span>
+        ))}
+      </div>
+    )
+  }
+  <a
+    class="btn btn-outline-primary btn-sm"
+    href={`/${SHOWCASE_FOLDER}/${data.id}`}
+  >
+    View showcase
+  </a>
+</div>

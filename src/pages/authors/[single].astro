@@ -29,12 +29,15 @@ const { Content } = await render(author);
 const BLOG_FOLDER = "blog";
 const posts = await getSinglePage(BLOG_FOLDER);
 const postFilterByAuthor = posts.filter(
-  (post) => slugify(post.data.author) === slugify(title)
+  (post) => slugify(post.data.author) === slugify(title),
 );
 ---
 
 <Base
-  description={description}   image={image}   meta_title={meta_title}   title={title}
+  description={description}
+  image={image}
+  meta_title={meta_title}
+  title={title}
 >
   <section class="section-sm pb-0">
     <div class="container">
@@ -45,7 +48,12 @@ const postFilterByAuthor = posts.filter(
           {
             image && (
               <ImageMod
-                alt={title}                 class="mx-auto mb-10 rounded"                 format="webp"                 height={200}                 src={image}                 width={200}
+                alt={title}
+                class="mx-auto mb-10 rounded"
+                format="webp"
+                height={200}
+                src={image}
+                width={200}
               />
             )
           }
@@ -53,7 +61,10 @@ const postFilterByAuthor = posts.filter(
           <div class="content">
             <Content />
           </div>
-          <Social className="social-icons" source={social} />
+          <Social
+            className="social-icons"
+            source={social}
+          />
         </div>
       </div>
 
