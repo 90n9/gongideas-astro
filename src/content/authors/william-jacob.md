@@ -2,7 +2,7 @@
 title: William Jacob
 email: williamjacob@email.com
 image: "/images/avatar.png"
-description: this is meta description
+description: วิศวกรระบบที่จริงจังกับการวัดผลและประสิทธิภาพ
 social:
   - name: github
     icon: FaGithub
@@ -17,4 +17,4 @@ social:
     link: https://linkedin.com
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
+William รับผิดชอบงานด้านโครงสร้างพื้นฐานและการทำงานอัตโนมัติ เขาเล่าถึงแนวทางดูแลแพลตฟอร์มให้เสถียร วัดผลได้ และขยายต่อได้ง่าย เรื่องราวของเขามักลงลึกถึงการจัดการระบบ Deployment การวิเคราะห์ตัวชี้วัด และการออกแบบเครื่องมือสนับสนุนทีมพัฒนา

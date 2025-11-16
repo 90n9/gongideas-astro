@@ -1,7 +1,7 @@
 ---
-title: "Authors"
+title: "ทีมผู้เขียน"
 meta_title: ""
-description: "this is meta description"
+description: "สมาชิกที่ช่วยกันเล่าเรื่องราวบน GongIdeas"
 image: ""
 draft: false
 ---

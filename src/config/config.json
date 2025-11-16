@@ -24,18 +24,18 @@
 
   "announcement": {
     "enable": false,
-    "content": "<span class='text-center block'>Show any announcement here</span>",
+    "content": "<span class='text-center block'>แสดงประกาศสำคัญของคุณที่นี่</span>",
     "expire_days": 7
   },
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Copyright (c) 2023 - Present, GongIdeas"
+    "copyright": "Copyright (c) 2025 - Present, GongIdeas"
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Get Started",
+    "label": "เริ่มต้นใช้งาน",
     "link": "https://github.com/zeon-studio/astroplate"
   },
 
@@ -53,6 +53,6 @@
   "metadata": {
     "meta_author": "GongIdeas",
     "meta_image": "/images/og-image.png",
-    "meta_description": "A personal blog about software engineering and game development."
+    "meta_description": "บล็อกส่วนตัวที่เล่าเรื่องการพัฒนาเว็บและการพัฒนาเกม"
   }
 }

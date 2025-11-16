@@ -1,7 +1,7 @@
 ---
-title: "How to build an Application with modern Technology"
+title: "ยกระดับทีมด้วยเทคโนโลยีและข้อมูลร่วมสมัย"
 meta_title: ""
-description: "this is meta description"
+description: "มองภาพรวมทั้งระบบนิเวศ ตั้งแต่สถาปัตยกรรม การออกแบบ ไปจนถึงการวัดผล"
 date: 2022-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Technology", "Data"]
@@ -10,14 +10,14 @@ tags: ["technology", "tailwind"]
 draft: false
 ---
 
-Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+การย้ายระบบเดิมขึ้นสู่สถาปัตยกรรมแบบ cloud-native ต้องเริ่มจากการทำความเข้าใจภาระงานจริง เราแยกประเภทธุรกรรมออกจากงานเบื้องหลังด้วยคิวข้อความ แล้วใช้ serverless มารับบทงานที่มีโหลดเป็นจังหวะ เพื่อลดต้นทุนแต่ยังคุม SLA ได้ตามต้องการ
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+ข้อมูลคือสิ่งที่ทำให้การปรับโครงสร้างชัดเจนขึ้น เราเพิ่ม data contract ให้ทุกทีมเข้าใจ schema และ lineage ร่วมกัน พร้อมเสริม Observability Stack ที่รวม trace, metric และ log ไว้ที่เดียว จึงรู้ได้ทันทีว่าการปรับแต่งครั้งใดมีผลต่อผู้ใช้เพียงใด
 
-## Creative Design
+## แนวทางการออกแบบ
 
-Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+การออกแบบประสบการณ์ผู้ใช้ไม่จำเป็นต้องสวนทางกับประสิทธิภาพ หากกำหนดชุดคอมโพเนนต์ที่ยืดหยุ่นและมี guideline การใช้งานชัดเจน ทีมก็สามารถออกแบบ experiment ได้อย่างมั่นใจ เราผสานระบบดีไซน์เข้ากับงานพัฒนาโดยตรงผ่าน Storybook และโค้ดตัวอย่างที่รักษาหลักการเข้าถึงในทุกสถานะ
 
-> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+> ประสบการณ์ที่ดีเริ่มจากการฟังผู้ใช้ และแปลงเสียงนั้นเป็นข้อกำหนดเชิงเทคนิคที่ทดสอบได้จริง
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+ผลลัพธ์คือผลิตภัณฑ์ที่ขยายตัวได้โดยไม่เสียเอกลักษณ์ของประสบการณ์ผู้ใช้ และยังให้ทีมเห็นผลลัพธ์ผ่านแดชบอร์ดเดียวกันทั้งหมด

@@ -1,29 +1,29 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "หน้าแรก",
       "url": "/"
     },
     {
-      "name": "Blog",
+      "name": "บล็อก",
       "url": "/blog"
     },
     {
-      "name": "Showcase",
+      "name": "ผลงาน",
       "url": "/showcase"
     },
     {
-      "name": "About",
+      "name": "เกี่ยวกับเรา",
       "url": "/about"
     }
   ],
   "footer": [
     {
-      "name": "About",
+      "name": "เกี่ยวกับเรา",
       "url": "/about"
     },
     {
-      "name": "Privacy Policy",
+      "name": "นโยบายความเป็นส่วนตัว",
       "url": "/privacy-policy"
     }
   ]

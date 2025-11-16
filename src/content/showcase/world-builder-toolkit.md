@@ -1,13 +1,13 @@
 ---
-title: "World Builder Toolkit"
-meta_title: "World Builder Toolkit"
-description: "Procedural content tools that sit inside Godot to bootstrap terrain and quest data structures."
+title: "ชุดเครื่องมือ World Builder"
+meta_title: "ชุดเครื่องมือ World Builder"
+description: "เครื่องมือสร้างคอนเทนต์แบบ Procedural ภายใน Godot สำหรับปั้นภูมิประเทศและข้อมูลภารกิจ"
 date: 2023-05-09
 image: "/images/service-2.png"
 author: "GongIdeas"
 categories:
-  - "Game Dev"
-  - "Tools"
+  - "พัฒนาเกม"
+  - "เครื่องมือ"
 tags:
   - "Godot"
   - "Procedural"
@@ -15,14 +15,14 @@ tags:
 draft: false
 ---
 
-We prototyped a toolkit that plugs into the Godot editor and mirrors level data back to Astro for documentation. Designers can mark up terrain stamps, annotate encounters, and publish questlines without touching JSON.
+เราสร้างต้นแบบปลั๊กอินที่ฝังตัวใน Godot Editor และซิงก์ข้อมูลเลเวลกลับไปยัง Astro เพื่อสร้างเอกสารอัตโนมัติ ดีไซเนอร์สามารถทำเครื่องหมายภูมิประเทศ ใส่บันทึกเหตุการณ์ และเผยแพร่เส้นเรื่องได้โดยไม่ต้องแตะ JSON เลย
 
-### Toolkit stack
+### สแตกของเครื่องมือ
 
-1. Godot editor plugin emits structured YAML.
-2. GitHub Actions converts YAML into Markdown and shoves it into the Astro content collection.
-3. Astro renders reference docs complete with screenshots and diff visualizations for weekly reviews.
+1. ปลั๊กอิน Godot ส่งออก YAML ที่มีโครงสร้างชัดเจน
+2. GitHub Actions แปลง YAML เป็น Markdown แล้วนำเข้า content collection ของ Astro
+3. Astro เรนเดอร์เอกสารอ้างอิงพร้อมภาพหน้าจอและ Diff ให้รีวิวทุกสัปดาห์
 
-### Why it matters
+### ทำไมถึงสำคัญ
 
-Synchronizing design intent with implementation has always been painful. This toolkit shows how a light amount of automation (plus rock-solid content collections) keeps everybody working from the same data source.
+การซิงก์ความตั้งใจในการออกแบบกับการพัฒนาเป็นเรื่องท้าทายมาตลอด ชุดเครื่องมือนี้พิสูจน์ว่าการเพิ่มระบบอัตโนมัติเล็กน้อย (ร่วมกับ content collection ที่แข็งแรง) ช่วยให้ทุกคนทำงานจากแหล่งข้อมูลเดียวกันได้จริง

@@ -169,7 +169,7 @@ const SearchModal = () => {
           </label>
           <input
             id="searchInput"
-            placeholder="Search..."
+            placeholder="ค้นหา..."
             className="search-wrapper-header-input"
             type="input"
             name="search"
@@ -204,7 +204,7 @@ const SearchModal = () => {
                 <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 001.506.0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 00-.753 1.659z"></path>
               </svg>
             </kbd>
-            to navigate
+            เพื่อเลื่อนรายการ
           </span>
           <span className="flex items-center">
             <kbd>
@@ -220,16 +220,16 @@ const SearchModal = () => {
                 ></path>
               </svg>
             </kbd>
-            to select
+            เพื่อเลือก
           </span>
           {searchString && (
             <span>
-              <strong>{searchResult.length} </strong> results - in{" "}
-              <strong>{totalTime} </strong> seconds
+              พบ <strong>{searchResult.length}</strong> ผลลัพธ์ ใน{" "}
+              <strong>{totalTime}</strong> วินาที
             </span>
           )}
           <span>
-            <kbd>ESC</kbd> to close
+            กด <kbd>ESC</kbd> เพื่อปิด
           </span>
         </div>
       </div>

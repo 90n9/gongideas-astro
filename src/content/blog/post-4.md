@@ -1,7 +1,7 @@
 ---
-title: "How to build an Application with modern Technology"
+title: "ออกแบบสถาปัตยกรรมให้พร้อมทั้งคลาวด์และออนไซต์"
 meta_title: ""
-description: "this is meta description"
+description: "ถอดบทเรียนการเชื่อมโลกไฮบริด ตั้งแต่โครงสร้างระบบจนถึงประสบการณ์ผู้ใช้"
 date: 2022-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Architecture"]
@@ -10,14 +10,14 @@ tags: ["silicon", "technology"]
 draft: false
 ---
 
-Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+หลายองค์กรยังต้องทำงานกับระบบออนไซต์ควบคู่กับบริการบนคลาวด์ เราแก้ปัญหาด้วยการออกแบบสถาปัตยกรรมแบบไฮบริดที่คุมความปลอดภัยไว้ใกล้ตัว แต่ยังใช้บริการที่ขยายตัวอัตโนมัติได้ เมื่อวางเลเยอร์ API ให้ชัดและดูแลสัญญาแต่ละโดเมนดีพอ การผนวกสองโลกเข้าด้วยกันก็ไม่ซับซ้อนเท่าที่คิด
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+สำหรับระบบที่ต้องตอบสนองเร็ว เราสร้าง data mesh ที่ช่วยให้แต่ละทีมจัดการข้อมูลด้วยตนเองโดยยังอยู่ในมาตรฐานเดียวกัน เสริมด้วยแผน disaster recovery ที่ซ้อมบ่อย ๆ เพื่อให้มั่นใจว่าเมื่อเกิดเหตุไม่คาดฝันทุกคนรู้ว่าต้องทำอะไร
 
-## Creative Design
+## แนวทางการออกแบบ
 
-Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+การออกแบบสถาปัตยกรรมที่ดีควรสื่อสารกับทีมดีไซน์และคอนเทนต์ได้ง่าย เราสรุป flow สำคัญเป็นบล็อกภาพ ใช้ภาษาที่เข้าใจง่าย และอัปเดตเอกสารทุกครั้งที่โครงการเปลี่ยนแปลง ทำให้ทุกทีมเห็นภาพว่าจะส่งมอบประสบการณ์ผู้ใช้ที่เสถียรได้อย่างไร
 
-> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+> สถาปัตยกรรมที่ยืดหยุ่นคือการยอมรับว่าความเปลี่ยนแปลงเกิดขึ้นเสมอ แล้วออกแบบให้การปรับแก้เป็นเรื่องธรรมดา
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+สุดท้ายแล้ว ความพร้อมของกระบวนการและการสื่อสารคือสิ่งที่ทำให้เทคโนโลยีตอบโจทย์ธุรกิจได้จริง

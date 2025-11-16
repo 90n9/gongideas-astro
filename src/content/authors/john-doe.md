@@ -2,7 +2,7 @@
 title: John Doe
 email: johndoe@email.com
 image: "/images/avatar.png"
-description: this is meta description
+description: วิศวกรซอฟต์แวร์และนักเล่าเรื่องประจำ GongIdeas
 social:
   - name: github
     icon: FaGithub
@@ -17,4 +17,4 @@ social:
     link: https://linkedin.com
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
+John เชื่อว่าการทดลองลงมือจริงคือการเรียนรู้ที่ดีที่สุด เขาชอบจับคู่เทคโนโลยีสมัยใหม่กับแนวคิดเกมเพลย์แปลก ๆ เพื่อดูว่ามันจะพาโครงการไปได้ไกลแค่ไหน ทั้งบทความและบันทึกใน GongIdeas จึงเต็มไปด้วยบทเรียนจากประสบการณ์ตรง ตั้งแต่การออกแบบระบบหลังบ้าน การดูแลโค้ดเบสหลายภาษา ไปจนถึงเทคนิคปั้นโลกในเกมอินดี้

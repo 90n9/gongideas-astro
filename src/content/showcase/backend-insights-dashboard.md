@@ -1,28 +1,28 @@
 ---
-title: "Backend Insights Dashboard"
-meta_title: "Backend Insights Dashboard"
-description: "Operational metrics dashboard powered by Astro + Supabase with inline status digests."
+title: "แดชบอร์ดข้อมูลเชิงลึกฝั่ง Backend"
+meta_title: "แดชบอร์ดข้อมูลเชิงลึกฝั่ง Backend"
+description: "แดชบอร์ดตัวชี้วัดที่ใช้ Astro + Supabase พร้อมสรุปสถานะแบบเรียลไทม์"
 date: 2023-07-18
 image: "/images/service-1.png"
 author: "GongIdeas"
 categories:
-  - "Analytics"
-  - "Internal Tools"
+  - "การวิเคราะห์"
+  - "เครื่องมือภายใน"
 tags:
   - "Astro"
   - "Supabase"
-  - "Dashboard"
+  - "แดชบอร์ด"
 draft: false
 ---
 
-This showcase documents how we stitched together an Astro front end that consumes live deployment signals from Supabase edge functions. The primary goal was to give the team a single pane of glass for request throughput, cache hit rates, and alert annotations.
+โปรเจ็กต์นี้สาธิตวิธีเชื่อม Astro ฝั่งหน้าเว็บเข้ากับสัญญาณ Deployment แบบสดจาก Supabase edge functions เป้าหมายคือให้ทีมเห็นภาพรวมการประมวลผล ค่าการตอบกลับแคช และเหตุแจ้งเตือนทั้งหมดในหน้าจอเดียว
 
-## Highlights
+## ไฮไลต์
 
-- Built a streaming widget system on top of Astro Islands so the dashboard remains static but individual cards hydrate when new metrics arrive.
-- Used Supabase row-level security combined with service role functions so we can safely expose the dashboard to partner teams.
-- Composed log timelines with simple MDX blocks, which means adding a retro is as easy as dropping markdown next to the data file.
+- สร้างระบบวิดเจ็ตที่สตรีมข้อมูลบน Astro Islands ทำให้เพจยังเป็น Static ได้แต่การ์ดแต่ละใบอัปเดตทันทีเมื่อมีข้อมูลใหม่
+- ใช้ Row-level security ของ Supabase ร่วมกับ service role functions เพื่อให้แชร์แดชบอร์ดกับทีมพันธมิตรได้อย่างปลอดภัย
+- เรียบเรียงไทม์ไลน์ของล็อกด้วยบล็อก MDX แบบเรียบง่าย ช่วยให้การเพิ่มบันทึกย้อนหลังทำได้เพียงวาง Markdown ไว้ข้างไฟล์ข้อมูล
 
-## Next steps
+## ขั้นต่อไป
 
-The experiment proved that Astro can comfortably power operational tooling. Upcoming iterations will plug into the release train metadata and visualize the mean time to shipping fixes.
+การทดลองยืนยันว่า Astro สามารถขับเคลื่อนเครื่องมือเชิงปฏิบัติการได้อย่างสบาย รุ่นถัดไปจะเชื่อมกับข้อมูล Release Train และแสดงค่าเฉลี่ยเวลาที่ใช้ในการส่งแพตช์แก้ไข

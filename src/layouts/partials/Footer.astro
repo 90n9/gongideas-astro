@@ -4,7 +4,6 @@ import Social from "@/components/Social.astro";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import social from "@/config/social.json";
-import { markdownify } from "@/lib/utils/textConverter";
 
 const { footer }: { footer: { name: string; url: string }[] } = menu;
 ---
@@ -38,7 +37,7 @@ const { footer }: { footer: { name: string; url: string }[] } = menu;
     <div
       class="container text-center text-text-light dark:text-darkmode-text-light"
     >
-      <p>Copyright (c) 2023 - Present, GongIdeas</p>
+      <p>{config.params.copyright}</p>
     </div>
   </div>
 </footer>
