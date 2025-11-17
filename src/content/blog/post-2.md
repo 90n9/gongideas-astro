@@ -5,7 +5,7 @@ description: "มองภาพรวมทั้งระบบนิเวศ
 date: 2022-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Technology", "Data"]
-author: "Sam Wilson"
+author: "Gong Narathip"
 tags: ["technology", "tailwind"]
 draft: false
 ---

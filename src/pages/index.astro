@@ -24,7 +24,7 @@ const latestPosts =
 
 <Base>
   <!-- Banner -->
-  <section class="section pt-14">
+  <section class="section pt-14 pb-0">
     <div class="container">
       <div class="row justify-center">
         <div class="lg:col-7 md:col-9 mb-8 text-center">
@@ -52,15 +52,22 @@ const latestPosts =
           }
         </div>
         {
-          banner.image && (
+          banner.video && (
             <div class="col-12">
-              <ImageMod
-                alt="banner"
-                format="webp"
-                height={380}
-                src={banner.image}
-                width={1200}
-              />
+              <video
+                autoplay
+                class="w-full rounded-2xl bg-light dark:bg-darkmode-light"
+                loop
+                muted
+                playsinline
+                poster={banner.poster ?? undefined}
+              >
+                <source
+                  src={banner.video}
+                  type="video/mp4"
+                />
+                เบราว์เซอร์ของคุณไม่รองรับวิดีโอ HTML5
+              </video>
             </div>
           )
         }
@@ -149,42 +156,47 @@ const latestPosts =
               </div>
             )}
           </div>
-          <div class="row mt-10">
-            {showcases.items.map((item) => (
-              <div class="mb-10 md:col-6 lg:col-4">
-                <div class="h-full rounded-2xl border border-border bg-body p-6 shadow-sm dark:border-darkmode-border dark:bg-darkmode-body">
-                  <ImageMod
-                    alt={item.title}
-                    class="mb-6 w-full rounded-lg bg-light dark:bg-darkmode-light"
-                    format="webp"
-                    height={320}
-                    src={item.image}
-                    width={520}
-                  />
-                  <h3 class="mb-3">
-                    <a href={item.link}>{item.title}</a>
-                  </h3>
-                  <p class="mb-5 text-base text-text dark:text-darkmode-text">
-                    {item.description}
-                  </p>
-                  {item.tags.length > 0 && (
-                    <ul class="mb-6 flex flex-wrap gap-2">
-                      {item.tags.map((tag) => (
-                        <li class="rounded-full border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wide dark:border-darkmode-border">
-                          {tag}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  <a
-                    class="btn btn-sm btn-outline-primary"
-                    href={item.link}
-                  >
-                    ดูโปรเจ็กต์
-                  </a>
-                </div>
+          <div class="mt-10">
+            <div class="swiper showcase-slider">
+              <div class="swiper-wrapper">
+                {showcases.items.map((item) => (
+                  <div class="swiper-slide">
+                    <div class="h-full rounded-2xl border border-border bg-body p-6 shadow-sm dark:border-darkmode-border dark:bg-darkmode-body">
+                      <ImageMod
+                        alt={item.title}
+                        class="mb-6 w-full rounded-lg bg-light dark:bg-darkmode-light"
+                        format="webp"
+                        height={320}
+                        src={item.image}
+                        width={520}
+                      />
+                      <h3 class="mb-3">
+                        <a href={item.link}>{item.title}</a>
+                      </h3>
+                      <p class="mb-5 text-base text-text dark:text-darkmode-text">
+                        {item.description}
+                      </p>
+                      {item.tags.length > 0 && (
+                        <ul class="mb-6 flex flex-wrap gap-2">
+                          {item.tags.map((tag) => (
+                            <li class="rounded-full border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wide dark:border-darkmode-border">
+                              {tag}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      <a
+                        class="btn btn-sm btn-outline-primary"
+                        href={item.link}
+                      >
+                        ดูโปรเจ็กต์
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+              <div class="showcase-slider-pagination mt-9 flex items-center justify-center text-center" />
+            </div>
           </div>
         </div>
       </section>
@@ -229,7 +241,41 @@ const latestPosts =
     )
   }
   <!-- /Latest Posts -->
-
-  <Testimonial testimonial={testimonial} />
-  <CallToAction call_to_action={call_to_action} />
 </Base>
+
+<script>
+  import { Swiper } from "swiper";
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import { Autoplay, Pagination } from "swiper/modules";
+
+  document.addEventListener("astro:page-load", () => {
+    const sliderEl = document.querySelector(".showcase-slider");
+    if (!sliderEl) {
+      return;
+    }
+
+    new Swiper(sliderEl, {
+      modules: [Pagination, Autoplay],
+      spaceBetween: 24,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".showcase-slider-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  });
+</script>
