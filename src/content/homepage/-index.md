@@ -3,7 +3,9 @@
 banner:
   title: "GongIdeas"
   content: "บล็อกส่วนตัวที่บันทึกเรื่องราววิศวกรรมซอฟต์แวร์และการพัฒนาเกม"
-  image: "/images/banner.png"
+  image: "/images/banner-poster.png"
+  video: "/images/banner-video.mp4"
+  poster: "/images/banner-poster.png"
   button:
     enable: false
     label: "เริ่มต้นใช้ฟรี"

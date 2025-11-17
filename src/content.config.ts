@@ -94,6 +94,8 @@ const homepageCollection = defineCollection({
       title: z.string(),
       content: z.string(),
       image: z.string(),
+      poster: z.string(),
+      video: z.string(),
       button: z.object({
         enable: z.boolean(),
         label: z.string(),

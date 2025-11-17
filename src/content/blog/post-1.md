@@ -5,7 +5,7 @@ description: "คู่มือวางสถาปัตยกรรม ป�
 date: 2022-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Application", "Data"]
-author: "John Doe"
+author: "Gong Narathip"
 tags: ["nextjs", "tailwind"]
 draft: false
 ---
