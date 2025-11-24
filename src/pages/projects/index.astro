@@ -17,8 +17,7 @@ if (projectIndex.data.draft) {
 const projects = await getSinglePage(PROJECT_FOLDER);
 const sortedProjects = sortByDate(projects);
 const itemsPerPage = config.settings.pagination;
-const totalPages: number =
-  Math.ceil(sortedProjects.length / itemsPerPage) || 1;
+const totalPages: number = Math.ceil(sortedProjects.length / itemsPerPage) || 1;
 const currentProjects = sortedProjects.slice(0, itemsPerPage);
 ---
 

@@ -33,6 +33,10 @@ yarn run dev
 yarn run build
 ```
 
+### 📈 Analytics
+
+Set `PUBLIC_GOOGLE_ANALYTICS_ID` in a `.env` (or your hosting provider’s environment settings) to enable Google Analytics. You can start from `.env.example` and drop in your GA4 measurement ID; the layout will load gtag and track page views automatically, including Astro view transitions.
+
 ## 🧩 Adding Content
 
 ### ✍️ Create a New Blog Post

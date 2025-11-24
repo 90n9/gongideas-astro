@@ -24,16 +24,15 @@ const projectEntries =
 const projectItems =
   projects?.items && projects.items.length > 0
     ? projects.items
-    : sortByDate([...projectEntries]).slice(
-        0,
-        projects?.limit ?? projectEntries.length,
-      ).map((project) => ({
-        title: project.data.title,
-        description: project.data.description ?? "",
-        image: project.data.image ?? "",
-        link: `/${PROJECT_FOLDER}/${project.id}`,
-        tags: project.data.tags ?? [],
-      }));
+    : sortByDate([...projectEntries])
+        .slice(0, projects?.limit ?? projectEntries.length)
+        .map((project) => ({
+          title: project.data.title,
+          description: project.data.description ?? "",
+          image: project.data.image ?? "",
+          link: `/${PROJECT_FOLDER}/${project.id}`,
+          tags: project.data.tags ?? [],
+        }));
 ---
 
 <Base>
@@ -99,18 +98,16 @@ const projectItems =
                 {projectItems.map((item) => (
                   <div class="swiper-slide">
                     <div class="h-full rounded-2xl border border-border bg-body p-6 shadow-sm dark:border-darkmode-border dark:bg-darkmode-body">
-                      {
-                        item.image && (
-                          <ImageMod
-                            alt={item.title}
-                            class="mb-6 w-full rounded-lg bg-light dark:bg-darkmode-light"
-                            format="webp"
-                            height={320}
-                            src={item.image}
-                            width={520}
-                          />
-                        )
-                      }
+                      {item.image && (
+                        <ImageMod
+                          alt={item.title}
+                          class="mb-6 w-full rounded-lg bg-light dark:bg-darkmode-light"
+                          format="webp"
+                          height={320}
+                          src={item.image}
+                          width={520}
+                        />
+                      )}
                       <h3 class="mb-3">
                         <a href={item.link}>{item.title}</a>
                       </h3>

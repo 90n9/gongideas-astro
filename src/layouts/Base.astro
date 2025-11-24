@@ -44,6 +44,54 @@ export interface Props {
 // destructure frontmatter
 const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
+
+const gaMeasurementId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
+const gaSnippet = gaMeasurementId
+  ? `(() => {
+      const GA_MEASUREMENT_ID = ${JSON.stringify(gaMeasurementId)};
+      if (!GA_MEASUREMENT_ID) return;
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+
+      if (!window.__gaInitialized) {
+        gtag('js', new Date());
+        gtag('config', GA_MEASUREMENT_ID, { send_page_view: false });
+        window.__gaInitialized = true;
+      }
+
+      const sendPageView = () => {
+        const pagePath = window.location.pathname + window.location.search;
+        if (window.__gaLastPath === pagePath) return;
+        window.__gaLastPath = pagePath;
+        gtag('event', 'page_view', {
+          page_path: pagePath,
+          page_title: document.title,
+        });
+      };
+
+      sendPageView();
+
+      if (!window.__gaPageviewHooked) {
+        const onHistoryChange = () => requestAnimationFrame(sendPageView);
+        const originalPush = history.pushState;
+        const originalReplace = history.replaceState;
+        history.pushState = function () {
+          originalPush.apply(this, arguments);
+          onHistoryChange();
+        };
+        history.replaceState = function () {
+          originalReplace.apply(this, arguments);
+          onHistoryChange();
+        };
+
+        window.addEventListener('popstate', onHistoryChange);
+        window.addEventListener('astro:page-load', onHistoryChange);
+        window.addEventListener('astro:after-swap', onHistoryChange);
+        window.__gaPageviewHooked = true;
+      }
+    })();`
+  : "";
 ---
 
 <!doctype html>
@@ -53,6 +101,21 @@ const { title, meta_title, description, image, noindex, canonical } =
     {
       config.google_tag_manager.enable && (
         <GoogleTagmanager id={config.google_tag_manager.gtm_id} />
+      )
+    }
+    {/* google analytics */}
+    {
+      gaMeasurementId && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+          />
+          <script
+            is:inline
+            set:html={gaSnippet}
+          />
+        </>
       )
     }
     <!-- favicon -->
