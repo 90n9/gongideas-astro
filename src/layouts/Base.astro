@@ -44,6 +44,8 @@ export interface Props {
 // destructure frontmatter
 const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
+
+const gaMeasurementId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 ---
 
 <!doctype html>
@@ -53,6 +55,42 @@ const { title, meta_title, description, image, noindex, canonical } =
     {
       config.google_tag_manager.enable && (
         <GoogleTagmanager id={config.google_tag_manager.gtm_id} />
+      )
+    }
+    {/* google analytics */}
+    {
+      gaMeasurementId && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+          />
+          <script is:inline>
+            {`const GA_MEASUREMENT_ID = ${JSON.stringify(gaMeasurementId)};
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+
+            if (!window.__gaInitialized) {
+              gtag('js', new Date());
+              gtag('config', GA_MEASUREMENT_ID, { send_page_view: false });
+              window.__gaInitialized = true;
+            }
+
+            const sendPageView = () => {
+              gtag('event', 'page_view', {
+                page_path: window.location.pathname + window.location.search,
+                page_title: document.title,
+              });
+            };
+
+            sendPageView();
+
+            if (!window.__gaPageviewHooked) {
+              window.addEventListener('astro:page-load', sendPageView);
+              window.__gaPageviewHooked = true;
+            }`}
+          </script>
+        </>
       )
     }
     <!-- favicon -->
