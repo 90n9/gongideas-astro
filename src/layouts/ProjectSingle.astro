@@ -1,5 +1,5 @@
 ---
-import ShowcaseCard from "@/components/ShowcaseCard.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
 import Share from "@/components/Share.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import dateFormat from "@/lib/utils/dateFormat";
@@ -115,7 +115,7 @@ const {
           <div class="row justify-center">
             {similarProjects.map((project) => (
               <div class="mb-14 md:col-6 lg:col-4">
-                <ShowcaseCard data={project} />
+                <ProjectCard data={project} />
               </div>
             ))}
           </div>

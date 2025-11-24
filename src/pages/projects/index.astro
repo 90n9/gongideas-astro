@@ -1,5 +1,5 @@
 ---
-import ShowcaseCard from "@/components/ShowcaseCard.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
 import Pagination from "@/components/Pagination.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
@@ -35,7 +35,7 @@ const currentProjects = sortedProjects.slice(0, itemsPerPage);
         {
           currentProjects.map((project) => (
             <div class="mb-14 md:col-6 lg:col-4">
-              <ShowcaseCard data={project} />
+              <ProjectCard data={project} />
             </div>
           ))
         }

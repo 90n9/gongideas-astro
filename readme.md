@@ -59,7 +59,7 @@ draft: false
 
 ### 🌟 Create a New Project Entry
 
-1. Create a Markdown file in `src/content/project/` (for example `src/content/project/release-dashboard.md`).
+1. Create a Markdown file in `src/content/projects/` (for example `src/content/projects/release-dashboard.md`).
 2. Fill in the project schema:
 
 ```md
@@ -76,8 +76,8 @@ draft: false
 ---
 ```
 
-3. Document the highlights using Markdown headings, lists, and images just like the examples already in `src/content/project`.
-4. Preview with `yarn dev` to confirm the project renders correctly on the `/project` page and homepage sections.
+3. Document the highlights using Markdown headings, lists, and images just like the examples already in `src/content/projects`.
+4. Preview with `yarn dev` to confirm the project renders correctly on the `/projects` page and homepage sections.
 
 <!-- reporting issue -->
 
