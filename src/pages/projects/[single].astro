@@ -1,13 +1,13 @@
 ---
 import Base from "@/layouts/Base.astro";
-import ShowcaseSingle from "@/layouts/ShowcaseSingle.astro";
+import ProjectSingle from "@/layouts/ProjectSingle.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 
 export async function getStaticPaths() {
-  const SHOWCASE_FOLDER = "showcase";
-  const showcases = await getSinglePage(SHOWCASE_FOLDER);
+  const PROJECT_FOLDER = "projects";
+  const projects = await getSinglePage(PROJECT_FOLDER);
 
-  return showcases.map((post) => ({
+  return projects.map((post) => ({
     params: {
       single: post.id,
     },
@@ -25,5 +25,5 @@ const { title, meta_title, description, image } = post.data;
   meta_title={meta_title}
   title={title}
 >
-  <ShowcaseSingle post={post} />
+  <ProjectSingle post={post} />
 </Base>

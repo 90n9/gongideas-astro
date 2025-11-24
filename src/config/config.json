@@ -15,7 +15,7 @@
   "settings": {
     "search": true,
     "sticky_header": true,
-    "theme_switcher": true,
+    "theme_switcher": false,
     "default_theme": "system",
     "pagination": 10,
     "summary_length": 200,
@@ -29,12 +29,11 @@
   },
 
   "params": {
-    "contact_form_action": "#",
     "copyright": "Copyright (c) 2025 - Present, GongIdeas"
   },
 
   "navigation_button": {
-    "enable": true,
+    "enable": false,
     "label": "เริ่มต้นใช้งาน",
     "link": "https://github.com/zeon-studio/astroplate"
   },

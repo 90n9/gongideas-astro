@@ -57,10 +57,10 @@ draft: false
 3. Write the article body in Markdown (MDX works too) underneath the frontmatter.
 4. Run `yarn dev` to preview or `yarn build` for a production check; Astro will automatically pick up anything inside `src/content/blog`.
 
-### 🌟 Create a New Showcase Entry
+### 🌟 Create a New Project Entry
 
-1. Create a Markdown file in `src/content/showcase/` (for example `src/content/showcase/release-dashboard.md`).
-2. Fill in the showcase schema:
+1. Create a Markdown file in `src/content/project/` (for example `src/content/project/release-dashboard.md`).
+2. Fill in the project schema:
 
 ```md
 ---
@@ -76,8 +76,8 @@ draft: false
 ---
 ```
 
-3. Document the highlights using Markdown headings, lists, and images just like the examples already in `src/content/showcase`.
-4. Preview with `yarn dev` to confirm the showcase renders correctly on the `/showcase` page and homepage sections.
+3. Document the highlights using Markdown headings, lists, and images just like the examples already in `src/content/project`.
+4. Preview with `yarn dev` to confirm the project renders correctly on the `/project` page and homepage sections.
 
 <!-- reporting issue -->
 

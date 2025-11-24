@@ -7,31 +7,31 @@ import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import PageHeader from "@/partials/PageHeader.astro";
 
-const SHOWCASE_FOLDER = "showcase";
+const PROJECT_FOLDER = "projects";
 const { slug } = Astro.params;
 
-const showcaseIndex = await getListPage(SHOWCASE_FOLDER, "-index");
+const projectIndex = await getListPage(PROJECT_FOLDER, "-index");
 
-if (showcaseIndex.data.draft) {
+if (projectIndex.data.draft) {
   return Astro.redirect("/404");
 }
 
-const showcases = await getSinglePage(SHOWCASE_FOLDER);
-const sortedShowcases = sortByDate(showcases);
+const projects = await getSinglePage(PROJECT_FOLDER);
+const sortedProjects = sortByDate(projects);
 const totalPages: number =
-  Math.ceil(sortedShowcases.length / config.settings.pagination) || 1;
+  Math.ceil(sortedProjects.length / config.settings.pagination) || 1;
 const currentPage = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
 const indexOfLastItem = currentPage * config.settings.pagination;
 const indexOfFirstItem = indexOfLastItem - config.settings.pagination;
-const currentShowcases = sortedShowcases.slice(
+const currentProjects = sortedProjects.slice(
   indexOfFirstItem,
   indexOfLastItem,
 );
 
 export async function getStaticPaths() {
-  const SHOWCASE_FOLDER = "showcase";
-  const showcases = await getSinglePage(SHOWCASE_FOLDER);
-  const totalPages = Math.ceil(showcases.length / config.settings.pagination);
+  const PROJECT_FOLDER = "projects";
+  const projects = await getSinglePage(PROJECT_FOLDER);
+  const totalPages = Math.ceil(projects.length / config.settings.pagination);
   const paths = [];
 
   for (let i = 1; i < totalPages; i++) {
@@ -46,19 +46,19 @@ export async function getStaticPaths() {
 ---
 
 <Base
-  description={showcaseIndex.data.description}
-  image={showcaseIndex.data.image}
-  meta_title={showcaseIndex.data.meta_title}
-  title={showcaseIndex.data.title}
+  description={projectIndex.data.description}
+  image={projectIndex.data.image}
+  meta_title={projectIndex.data.meta_title}
+  title={projectIndex.data.title}
 >
-  <PageHeader title={showcaseIndex.data.title} />
+  <PageHeader title={projectIndex.data.title} />
   <section class="section">
     <div class="container">
       <div class="row">
         {
-          currentShowcases.map((showcase) => (
+          currentProjects.map((project) => (
             <div class="mb-14 md:col-6 lg:col-4">
-              <ShowcaseCard data={showcase} />
+              <ShowcaseCard data={project} />
             </div>
           ))
         }
@@ -66,7 +66,7 @@ export async function getStaticPaths() {
       <div class="mt-10 text-center">
         <Pagination
           currentPage={currentPage}
-          section={SHOWCASE_FOLDER}
+          section={PROJECT_FOLDER}
           totalPages={totalPages}
         />
       </div>

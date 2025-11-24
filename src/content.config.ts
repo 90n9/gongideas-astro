@@ -70,9 +70,9 @@ const contactCollection = defineCollection({
   }),
 });
 
-// showcase collection schema
-const showcaseCollection = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/showcase" }),
+// project collection schema
+const projectCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/projects" }),
   schema: z.object({
     title: z.string(),
     meta_title: z.string().optional(),
@@ -80,8 +80,8 @@ const showcaseCollection = defineCollection({
     date: z.date().optional(),
     image: z.string().optional(),
     author: z.string().default("Admin"),
-    categories: z.array(z.string()).default(["Showcase"]),
-    tags: z.array(z.string()).default(["featured"]),
+    categories: z.array(z.string()).default(["others"]),
+    tags: z.array(z.string()).default(["others"]),
     draft: z.boolean().optional(),
   }),
 });
@@ -91,22 +91,22 @@ const homepageCollection = defineCollection({
   loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/homepage" }),
   schema: z.object({
     banner: z.object({
-      title: z.string(),
-      content: z.string(),
-      image: z.string(),
-      poster: z.string(),
-      video: z.string(),
+      title: z.string().optional(),
+      content: z.string().optional(),
+      poster: z.string().optional(),
+      video: z.string().optional(),
       button: z.object({
         enable: z.boolean(),
         label: z.string(),
         link: z.string(),
-      }),
+      }).optional(),
     }),
-    showcases: z
+    projects: z
       .object({
         enable: z.boolean(),
         title: z.string(),
         description: z.string(),
+        limit: z.number().optional(),
         button: z
           .object({
             enable: z.boolean(),
@@ -114,15 +114,17 @@ const homepageCollection = defineCollection({
             link: z.string(),
           })
           .optional(),
-        items: z.array(
-          z.object({
-            title: z.string(),
-            description: z.string(),
-            image: z.string(),
-            link: z.string(),
-            tags: z.array(z.string()).default([]),
-          }),
-        ),
+        items: z
+          .array(
+            z.object({
+              title: z.string(),
+              description: z.string(),
+              image: z.string(),
+              link: z.string(),
+              tags: z.array(z.string()).default([]),
+            }),
+          )
+          .default([]),
       })
       .optional(),
     latest_posts: z
@@ -132,21 +134,6 @@ const homepageCollection = defineCollection({
         description: z.string(),
         limit: z.number().default(3),
       })
-      .optional(),
-    features: z
-      .array(
-        z.object({
-          title: z.string(),
-          image: z.string(),
-          content: z.string(),
-          bulletpoints: z.array(z.string()),
-          button: z.object({
-            enable: z.boolean(),
-            label: z.string(),
-            link: z.string(),
-          }),
-        }),
-      )
       .optional(),
   }),
 });
@@ -200,7 +187,7 @@ export const collections = {
   pages: pagesCollection,
   about: aboutCollection,
   contact: contactCollection,
-  showcase: showcaseCollection,
+  projects: projectCollection,
 
   // sections
   ctaSection: ctaSectionCollection,

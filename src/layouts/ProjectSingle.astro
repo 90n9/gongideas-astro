@@ -9,11 +9,11 @@ import { render } from "astro:content";
 import { FaRegClock, FaRegFolder, FaRegUserCircle } from "react-icons/fa";
 import ImageMod from "./components/ImageMod.astro";
 
-const COLLECTION_FOLDER = "showcase";
+const COLLECTION_FOLDER = "projects";
 const { post } = Astro.props;
 
 const posts = await getSinglePage(COLLECTION_FOLDER);
-const similarShowcases = similarItems(post, posts);
+const similarProjects = similarItems(post, posts);
 const { Content } = await render(post);
 const {
   title,
@@ -109,13 +109,13 @@ const {
     </div>
 
     {
-      similarShowcases.length > 0 && (
+      similarProjects.length > 0 && (
         <div class="section pb-0">
           <h2 class="h3 mb-12 text-center">ผลงานที่เกี่ยวข้อง</h2>
           <div class="row justify-center">
-            {similarShowcases.map((showcase) => (
+            {similarProjects.map((project) => (
               <div class="mb-14 md:col-6 lg:col-4">
-                <ShowcaseCard data={showcase} />
+                <ShowcaseCard data={project} />
               </div>
             ))}
           </div>
