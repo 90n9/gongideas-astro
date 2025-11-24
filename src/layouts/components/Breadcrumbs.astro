@@ -4,6 +4,13 @@ import { humanize } from "@/lib/utils/textConverter";
 const { className }: { className?: string } = Astro.props;
 
 const paths = Astro.url.pathname.split("/").filter((x) => x);
+const labelOverrides: Record<string, string> = {
+  projects: "โปรเจกต์ของฉัน",
+  blog: "บล็อก",
+  about: "เกี่ยวกับ",
+  contact: "ติดต่อ",
+};
+
 let parts = [
   {
     label: "หน้าแรก",
@@ -14,9 +21,11 @@ let parts = [
 
 paths.forEach((label: string, i: number) => {
   const href = `/${paths.slice(0, i + 1).join("/")}`;
+  const rawLabel = label.replace(".html", "").replace(/[-_]/g, " ");
+  const displayLabel = labelOverrides[label] || humanize(rawLabel) || "";
   label !== "page" &&
     parts.push({
-      label: humanize(label.replace(".html", "").replace(/[-_]/g, " ")) || "",
+      label: displayLabel,
       href,
       "aria-label": Astro.url.pathname === href ? "page" : undefined,
     });
