@@ -12,7 +12,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "format": "prettier -w ./src",
-    "lint": "eslint . --ext .js,.ts,.astro --fix",
+    "lint": "eslint src --ext .js,.ts,.astro --fix",
     "generate-json": "node scripts/jsonGenerator.js",
     "remove-darkmode": "node scripts/removeDarkmode.js && yarn format"
   },

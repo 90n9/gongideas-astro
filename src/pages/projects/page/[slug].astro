@@ -23,10 +23,7 @@ const totalPages: number =
 const currentPage = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
 const indexOfLastItem = currentPage * config.settings.pagination;
 const indexOfFirstItem = indexOfLastItem - config.settings.pagination;
-const currentProjects = sortedProjects.slice(
-  indexOfFirstItem,
-  indexOfLastItem,
-);
+const currentProjects = sortedProjects.slice(indexOfFirstItem, indexOfLastItem);
 
 export async function getStaticPaths() {
   const PROJECT_FOLDER = "projects";

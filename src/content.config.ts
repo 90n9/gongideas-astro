@@ -95,11 +95,13 @@ const homepageCollection = defineCollection({
       content: z.string().optional(),
       poster: z.string().optional(),
       video: z.string().optional(),
-      button: z.object({
-        enable: z.boolean(),
-        label: z.string(),
-        link: z.string(),
-      }).optional(),
+      button: z
+        .object({
+          enable: z.boolean(),
+          label: z.string(),
+          link: z.string(),
+        })
+        .optional(),
     }),
     projects: z
       .object({
