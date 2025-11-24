@@ -2,7 +2,7 @@
 # Banner
 banner:
   title: "GongIdeas"
-  "content": "Make It Real"
+  content: "Make It Real"
   video: "/images/banner-video.mp4"
   poster: "/images/banner-poster.png"
 
