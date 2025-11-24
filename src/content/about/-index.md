@@ -1,6 +1,6 @@
 ---
-title: "About Me – GongIdeas"
-meta_title: "About Me | GongIdeas – กองไอเดียที่รอทำให้เป็นจริง"
+title: "เกี่ยวกับฉัน – GongIdeas"
+meta_title: "เกี่ยวกับฉัน | GongIdeas – กองไอเดียที่รอทำให้เป็นจริง"
 description: "รู้จักตัวตนผมมากขึ้น—ผู้สร้าง GongIdeas เว็บที่รวมไอเดียจากงานพัฒนาเว็บ เกม และโปรเจกต์ทดลองมากมาย ชอบเรียนรู้ คิดบวก และนำไอเดียมาทำให้เป็นจริง ด้วยแนวคิด Make it work, Make it right, Make it better."
 image: "/images/about-us.png"
 draft: false
