@@ -25,7 +25,7 @@ const { theme_switcher }: { theme_switcher: boolean } = config.settings;
 
 const parseDimension = (value: string | number) => {
   const numeric = Number(String(value).replace("px", ""));
-  return Number.isFinite(numeric) ? numeric : undefined;
+  return !isNaN(numeric) && isFinite(numeric) ? numeric : undefined;
 };
 
 const resolvedLogo = src || logo;
