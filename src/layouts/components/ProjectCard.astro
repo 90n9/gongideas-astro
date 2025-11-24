@@ -5,7 +5,7 @@ import { humanize, plainify } from "@/lib/utils/textConverter";
 import ImageMod from "./ImageMod.astro";
 
 const { summary_length }: { summary_length: number } = config.settings;
-const SHOWCASE_FOLDER = "showcase";
+const PROJECT_FOLDER = "projects";
 const { data } = Astro.props;
 const { title, image, date, author, categories = [], tags = [] } = data.data;
 ---
@@ -24,7 +24,7 @@ const { title, image, date, author, categories = [], tags = [] } = data.data;
     )
   }
   <h4 class="mb-3">
-    <a href={`/${SHOWCASE_FOLDER}/${data.id}`}>
+    <a href={`/${PROJECT_FOLDER}/${data.id}`}>
       {title}
     </a>
   </h4>
@@ -62,7 +62,7 @@ const { title, image, date, author, categories = [], tags = [] } = data.data;
   }
   <a
     class="btn btn-outline-primary btn-sm"
-    href={`/${SHOWCASE_FOLDER}/${data.id}`}
+    href={`/${PROJECT_FOLDER}/${data.id}`}
   >
     ดูรายละเอียดผลงาน
   </a>

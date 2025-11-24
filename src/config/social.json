@@ -3,22 +3,17 @@
     {
       "name": "facebook",
       "icon": "FaFacebook",
-      "link": "https://www.facebook.com/"
-    },
-    {
-      "name": "x",
-      "icon": "FaXTwitter",
-      "link": "https://x.com/"
+      "link": "https://www.facebook.com/people/GongIdeas/61583997504846/"
     },
     {
       "name": "github",
       "icon": "FaGithub",
-      "link": "https://www.github.com/"
+      "link": "https://github.com/90n9"
     },
     {
       "name": "linkedin",
       "icon": "FaLinkedin",
-      "link": "https://www.linkedin.com/"
+      "link": "https://www.linkedin.com/in/narathip-harijiratiwong-a96a0683/"
     }
   ]
 }

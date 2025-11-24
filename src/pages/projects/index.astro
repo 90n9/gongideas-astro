@@ -1,5 +1,5 @@
 ---
-import ShowcaseCard from "@/components/ShowcaseCard.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
 import Pagination from "@/components/Pagination.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
@@ -7,35 +7,35 @@ import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import PageHeader from "@/partials/PageHeader.astro";
 
-const SHOWCASE_FOLDER = "showcase";
-const showcaseIndex = await getListPage(SHOWCASE_FOLDER, "-index");
+const PROJECT_FOLDER = "projects";
+const projectIndex = await getListPage(PROJECT_FOLDER, "-index");
 
-if (showcaseIndex.data.draft) {
+if (projectIndex.data.draft) {
   return Astro.redirect("/404");
 }
 
-const showcases = await getSinglePage(SHOWCASE_FOLDER);
-const sortedShowcases = sortByDate(showcases);
+const projects = await getSinglePage(PROJECT_FOLDER);
+const sortedProjects = sortByDate(projects);
 const itemsPerPage = config.settings.pagination;
 const totalPages: number =
-  Math.ceil(sortedShowcases.length / itemsPerPage) || 1;
-const currentShowcases = sortedShowcases.slice(0, itemsPerPage);
+  Math.ceil(sortedProjects.length / itemsPerPage) || 1;
+const currentProjects = sortedProjects.slice(0, itemsPerPage);
 ---
 
 <Base
-  description={showcaseIndex.data.description}
-  image={showcaseIndex.data.image}
-  meta_title={showcaseIndex.data.meta_title}
-  title={showcaseIndex.data.title}
+  description={projectIndex.data.description}
+  image={projectIndex.data.image}
+  meta_title={projectIndex.data.meta_title}
+  title={projectIndex.data.title}
 >
-  <PageHeader title={showcaseIndex.data.title} />
+  <PageHeader title={projectIndex.data.title} />
   <section class="section">
     <div class="container">
       <div class="row">
         {
-          currentShowcases.map((showcase) => (
+          currentProjects.map((project) => (
             <div class="mb-14 md:col-6 lg:col-4">
-              <ShowcaseCard data={showcase} />
+              <ProjectCard data={project} />
             </div>
           ))
         }
@@ -43,7 +43,7 @@ const currentShowcases = sortedShowcases.slice(0, itemsPerPage);
       <div class="mt-10 text-center">
         <Pagination
           currentPage={1}
-          section={SHOWCASE_FOLDER}
+          section={PROJECT_FOLDER}
           totalPages={totalPages}
         />
       </div>

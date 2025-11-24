@@ -2,6 +2,8 @@
 
 ## Project Structure & Module Organization
 Source lives in `src/`, split by Astro pages (`src/pages`), React/utility components (`src/components`), layouts, and data helpers. Global config (Tailwind, Astro, ESLint) sits under `config/` and root dotfiles. Static assets and SEO artifacts are stored in `public/`, while generated JSON helpers reside in `scripts/` alongside `jsonGenerator.js` and `removeDarkmode.js`. Content updates generally flow `content → scripts → src/pages`, so keep script outputs in sync before committing.
+- Content collections use `projects` (not `showcase`); frontmatter keys should stay unquoted and match the schemas in `src/content.config.ts`. Keep a `contact/-index.md` entry in place to avoid sync warnings.
+- The `@/components` alias points to `src/layouts/components` (e.g., `ProjectCard.astro`); use these shared cards/layout pieces for consistency.
 
 ## Build, Test, and Development Commands
 - `yarn dev`: runs `scripts/jsonGenerator.js` and starts `astro dev` with hot reload.
@@ -9,6 +11,7 @@ Source lives in `src/`, split by Astro pages (`src/pages`), React/utility compon
 - `yarn preview`: serves the latest build for manual QA.
 - `yarn check`: Astro’s type and config validation; run before PRs to catch schema issues.
 - `yarn lint` / `yarn format`: eslint (Astro + TS + React) and prettier format pass; both respect Tailwind class sorting.
+- Note: builds may require network access for Google Fonts during prerender; ensure connectivity when running `yarn build`.
 
 ## Coding Style & Naming Conventions
 Codebase is TypeScript-first with ES modules. Prefer functional React components, `PascalCase` filenames for components/layouts, and kebab-case for routes and assets. Use 2-space indentation and keep Tailwind classes ordered by semantics (prettier-plugin-tailwindcss handles this). Run Prettier after structural edits and ESLint after logic changes; both are configured via `eslint.config.js` and `prettier` plugins in `package.json`.
