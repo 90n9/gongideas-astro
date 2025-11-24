@@ -20,30 +20,32 @@ if (aboutIndex.data.draft) {
   meta_title={meta_title}
   title={title}
 >
-  <section class="section-sm">
+  <section class="section pt-7">
     <div class="container">
       <div class="row justify-center">
-        <div class="text-center md:col-10 lg:col-7">
+        <article class="lg:col-10">
           {
             image && (
-              <ImageMod
-                alt={title}
-                class="mx-auto mb-6 rounded-lg"
-                format="webp"
-                height={200}
-                src={image}
-                width={200}
-              />
+              <div class="mb-8 text-center">
+                <ImageMod
+                  alt={title}
+                  class="h-20 w-20 rounded-full object-cover inline-block"
+                  format="webp"
+                  height={200}
+                  src={image}
+                  width={200}
+                />
+              </div>
             )
           }
-          <h2
-            class="h3 mb-6"
+          <h1
+            class="h2 mb-6 text-center"
             set:html={markdownify(title)}
           />
           <div class="content">
             <Content />
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
