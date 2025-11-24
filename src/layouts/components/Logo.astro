@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from "astro";
 import config from "@/config/config.json";
 import ImageMod from "./ImageMod.astro";
 
@@ -21,6 +22,43 @@ const {
 } = config.site;
 
 const { theme_switcher }: { theme_switcher: boolean } = config.settings;
+
+const parseDimension = (value: string | number) => {
+  const numeric = Number(String(value).replace("px", ""));
+  return !isNaN(numeric) && isFinite(numeric) ? numeric : undefined;
+};
+
+const resolvedLogo = src || logo;
+const resolvedDarkLogo = srcDarkmode || logo_darkmode || logo;
+const images = import.meta.glob("/public/images/**/*.{jpeg,jpg,png,gif,svg}");
+
+const logoKey = resolvedLogo ? `/public${resolvedLogo}` : "";
+const logoMeta: ImageMetadata | undefined =
+  logoKey && images[logoKey]
+    ? ((await images[logoKey]()) as { default: ImageMetadata }).default
+    : undefined;
+
+const aspectRatio =
+  logoMeta?.width && logoMeta?.height
+    ? logoMeta.width / logoMeta.height
+    : undefined;
+
+const widthFromConfig = parseDimension(logo_width);
+const heightFromConfig = parseDimension(logo_height);
+
+const displayWidth =
+  widthFromConfig ??
+  (aspectRatio && heightFromConfig
+    ? Math.round(heightFromConfig * aspectRatio)
+    : 150);
+
+const displayHeight =
+  aspectRatio && displayWidth
+    ? Math.round(displayWidth / aspectRatio)
+    : (heightFromConfig ?? 40);
+
+const retinaWidth = displayWidth * 2;
+const retinaHeight = displayHeight * 2;
 ---
 
 <a
@@ -28,32 +66,32 @@ const { theme_switcher }: { theme_switcher: boolean } = config.settings;
   href="/"
 >
   {
-    src || srcDarkmode || logo || logo_darkmode ? (
+    resolvedLogo || resolvedDarkLogo ? (
       <>
         <ImageMod
           alt={title}
           class={`inline-block ${theme_switcher && "dark:hidden"}`}
           format="webp"
-          height={logo_height.replace("px", "") * 2}
-          src={src ? src : logo}
+          height={retinaHeight}
+          src={resolvedLogo}
           style={{
-            height: logo_height.replace("px", "") + "px",
-            width: logo_width.replace("px", "") + "px",
+            height: `${displayHeight}px`,
+            width: `${displayWidth}px`,
           }}
-          width={logo_width.replace("px", "") * 2}
+          width={retinaWidth}
         />
         {theme_switcher && (
           <ImageMod
             alt={title}
             class={"hidden dark:inline-block"}
             format="webp"
-            height={logo_height.replace("px", "") * 2}
-            src={srcDarkmode ? srcDarkmode : logo_darkmode}
+            height={retinaHeight}
+            src={resolvedDarkLogo}
             style={{
-              height: logo_height.replace("px", "") + "px",
-              width: logo_width.replace("px", "") + "px",
+              height: `${displayHeight}px`,
+              width: `${displayWidth}px`,
             }}
-            width={logo_width.replace("px", "") * 2}
+            width={retinaWidth}
           />
         )}
       </>

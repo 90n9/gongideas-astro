@@ -13,14 +13,21 @@ const { title, image, date, author, categories = [], tags = [] } = data.data;
 <div class="bg-body p-6 dark:bg-darkmode-body">
   {
     image && (
-      <ImageMod
-        alt={title}
-        class="mb-6 w-full rounded"
-        format="webp"
-        height={230}
-        src={image}
-        width={445}
-      />
+      <div class="mb-6 h-[230px] overflow-hidden rounded">
+        <a
+          class="block h-full"
+          href={`/${PROJECT_FOLDER}/${data.id}`}
+        >
+          <ImageMod
+            alt={title}
+            class="h-full w-full object-cover"
+            format="webp"
+            height={230}
+            src={image}
+            width={445}
+          />
+        </a>
+      </div>
     )
   }
   <h4 class="mb-3">

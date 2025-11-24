@@ -72,7 +72,7 @@ title: "Project name"
 meta_title: "SEO title (optional)"
 description: "Short blurb that appears on cards"
 date: 2024-01-12
-image: "/images/service-1.png"
+image: "/images/projects/example/cover.png" # place the file under public/images/projects/<slug>/cover.png
 author: "GongIdeas"
 categories: ["internal tools"]
 tags: ["astro", "supabase"]
@@ -80,8 +80,9 @@ draft: false
 ---
 ```
 
-3. Document the highlights using Markdown headings, lists, and images just like the examples already in `src/content/projects`.
-4. Preview with `yarn dev` to confirm the project renders correctly on the `/projects` page and homepage sections.
+3. Use a cover image at least `1200x500` (≈2.4:1). Save it in `public/images/projects/<project-slug>/cover.png` and reference it via `/images/projects/<project-slug>/cover.png`.
+4. Document the highlights using Markdown headings, lists, and images just like the examples already in `src/content/projects`.
+5. Preview with `yarn dev` to confirm the project renders correctly on the `/projects` page and the homepage project grid (cards use a consistent 230px-tall image crop).
 
 <!-- reporting issue -->
 

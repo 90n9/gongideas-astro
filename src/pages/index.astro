@@ -93,47 +93,34 @@ const projectItems =
             )}
           </div>
           <div class="mt-10">
-            <div class="swiper project-slider">
-              <div class="swiper-wrapper">
-                {projectItems.map((item) => (
-                  <div class="swiper-slide">
-                    <div class="h-full rounded-2xl border border-border bg-body p-6 shadow-sm dark:border-darkmode-border dark:bg-darkmode-body">
-                      {item.image && (
-                        <ImageMod
-                          alt={item.title}
-                          class="mb-6 w-full rounded-lg bg-light dark:bg-darkmode-light"
-                          format="webp"
-                          height={320}
-                          src={item.image}
-                          width={520}
-                        />
-                      )}
-                      <h3 class="mb-3">
-                        <a href={item.link}>{item.title}</a>
-                      </h3>
-                      <p class="mb-5 text-base text-text dark:text-darkmode-text">
-                        {item.description}
-                      </p>
-                      {item.tags.length > 0 && (
-                        <ul class="mb-6 flex flex-wrap gap-2">
-                          {item.tags.map((tag) => (
-                            <li class="rounded-full border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wide dark:border-darkmode-border">
-                              {tag}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+            <div class="grid gap-6 md:grid-cols-2">
+              {projectItems.map((item) => (
+                <div class="flex h-full flex-col rounded-2xl border border-border bg-body p-6 shadow-sm dark:border-darkmode-border dark:bg-darkmode-body">
+                  {item.image && (
+                    <div class="mb-6 h-[230px] overflow-hidden rounded-lg bg-light dark:bg-darkmode-light">
                       <a
-                        class="btn btn-sm btn-outline-primary"
+                        class="block h-full"
                         href={item.link}
                       >
-                        ดูโปรเจ็กต์
+                        <ImageMod
+                          alt={item.title}
+                          class="h-full w-full object-cover"
+                          format="webp"
+                          height={230}
+                          src={item.image}
+                          width={445}
+                        />
                       </a>
                     </div>
-                  </div>
-                ))}
-              </div>
-              <div class="project-slider-pagination mt-9 flex items-center justify-center text-center" />
+                  )}
+                  <h3 class="mb-3">
+                    <a href={item.link}>{item.title}</a>
+                  </h3>
+                  <p class="mb-5 flex-grow text-base text-text dark:text-darkmode-text">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -180,40 +167,3 @@ const projectItems =
   }
   <!-- /Latest Posts -->
 </Base>
-
-<script>
-  import { Swiper } from "swiper";
-  import "swiper/css";
-  import "swiper/css/pagination";
-  import { Autoplay, Pagination } from "swiper/modules";
-
-  document.addEventListener("astro:page-load", () => {
-    const sliderEl = document.querySelector(".project-slider");
-    if (!sliderEl) {
-      return;
-    }
-
-    new Swiper(sliderEl, {
-      modules: [Pagination, Autoplay],
-      spaceBetween: 24,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".project-slider-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      },
-    });
-  });
-</script>
