@@ -1,11 +1,6 @@
 ---
 import config from "@/config/config.json";
-import {
-  IoLogoFacebook,
-  IoLogoLinkedin,
-  IoLogoPinterest,
-  IoLogoTwitter,
-} from "react-icons/io5";
+import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
 
 const { base_url }: { base_url: string } = config.site;
 const {
@@ -46,16 +41,6 @@ const {
       target="_blank"
     >
       <IoLogoLinkedin />
-    </a>
-  </li>
-  <li class="inline-block">
-    <a
-      aria-label="แชร์ไปยัง Pinterest"
-      href={`https://pinterest.com/pin/create/button/?url=${base_url}/${slug}&media=&description=${description}`}
-      rel="noreferrer noopener"
-      target="_blank"
-    >
-      <IoLogoPinterest />
     </a>
   </li>
 </ul>

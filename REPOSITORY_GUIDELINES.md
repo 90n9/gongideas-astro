@@ -3,6 +3,7 @@
 ## Project Structure & Module Organization
 Source lives in `src/`, split by Astro pages (`src/pages`), React/utility components (`src/components`), layouts, and data helpers. Global config (Tailwind, Astro, ESLint) sits under `config/` and root dotfiles. Static assets and SEO artifacts are stored in `public/`, while generated JSON helpers reside in `scripts/` alongside `jsonGenerator.js` and `removeDarkmode.js`. Content updates generally flow `content → scripts → src/pages`, so keep script outputs in sync before committing.
 - Content collections use `projects` (not `showcase`); frontmatter keys should stay unquoted and match the schemas in `src/content.config.ts`. Keep a `contact/-index.md` entry in place to avoid sync warnings.
+- Project covers live under `public/images/projects/<slug>/cover.png` and should be at least ~1200x500 (2.4:1). Reference them in frontmatter as `/images/projects/<slug>/cover.png` so cards stay consistent.
 - The `@/components` alias points to `src/layouts/components` (e.g., `ProjectCard.astro`); use these shared cards/layout pieces for consistency.
 
 ## Build, Test, and Development Commands

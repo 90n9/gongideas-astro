@@ -78,15 +78,15 @@ const {
         <div class="content mb-10">
           <Content />
         </div>
-        <div class="row items-start justify-between">
+        <div class="flex flex-col gap-6">
           {
             tags.length > 0 && (
-              <div class="mb-10 flex items-center lg:col-5 lg:mb-0">
-                <h5 class="mr-3">ป้ายกำกับ :</h5>
-                <ul>
+              <div class="flex flex-wrap items-center gap-3">
+                <h5 class="mr-1">ป้ายกำกับ :</h5>
+                <ul class="flex flex-wrap gap-2">
                   {tags.map((tag: string) => (
-                    <li class="inline-block">
-                      <span class="m-1 block rounded bg-light px-3 py-1 dark:bg-darkmode-light">
+                    <li>
+                      <span class="block rounded bg-light px-3 py-1 dark:bg-darkmode-light">
                         {humanize(tag)}
                       </span>
                     </li>
@@ -95,8 +95,8 @@ const {
               </div>
             )
           }
-          <div class="flex items-center lg:col-4">
-            <h5 class="mr-3">แชร์ :</h5>
+          <div class="flex flex-wrap items-center gap-3">
+            <h5 class="mr-1">แชร์ :</h5>
             <Share
               className="social-icons"
               description={description}
