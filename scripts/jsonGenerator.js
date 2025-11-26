@@ -5,6 +5,7 @@ import matter from "gray-matter";
 const CONTENT_DEPTH = 2;
 const JSON_FOLDER = "./.json";
 const BLOG_FOLDER = "src/content/blog";
+const PROJECTS_FOLDER = "src/content/projects";
 
 // get data from markdown
 const getData = (folder, groupDepth) => {
@@ -56,10 +57,18 @@ try {
     JSON.stringify(getData(BLOG_FOLDER, 2)),
   );
 
-  // merger json files for search
+  // create projects json file
+  fs.writeFileSync(
+    `${JSON_FOLDER}/projects.json`,
+    JSON.stringify(getData(PROJECTS_FOLDER, 2)),
+  );
+
+  // merge json files for search
   const postsPath = new URL(`../${JSON_FOLDER}/posts.json`, import.meta.url);
   const posts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
-  const search = [...posts];
+  const projectsPath = new URL(`../${JSON_FOLDER}/projects.json`, import.meta.url);
+  const projects = JSON.parse(fs.readFileSync(projectsPath, "utf8"));
+  const search = [...posts, ...projects];
   fs.writeFileSync(`${JSON_FOLDER}/search.json`, JSON.stringify(search));
 } catch (err) {
   console.error(err);
