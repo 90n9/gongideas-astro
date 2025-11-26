@@ -63,7 +63,7 @@ try {
     JSON.stringify(getData(PROJECTS_FOLDER, 2)),
   );
 
-  // merger json files for search
+  // merge json files for search
   const postsPath = new URL(`../${JSON_FOLDER}/posts.json`, import.meta.url);
   const posts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
   const projectsPath = new URL(`../${JSON_FOLDER}/projects.json`, import.meta.url);
