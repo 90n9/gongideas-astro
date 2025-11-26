@@ -57,7 +57,7 @@ try {
     JSON.stringify(getData(BLOG_FOLDER, 2)),
   );
 
-  // create json files
+  // create projects json file
   fs.writeFileSync(
     `${JSON_FOLDER}/projects.json`,
     JSON.stringify(getData(PROJECTS_FOLDER, 2)),
