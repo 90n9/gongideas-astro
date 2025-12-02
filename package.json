@@ -5,6 +5,9 @@
   "author": "zeon.studio",
   "license": "MIT",
   "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "type": "module",
   "scripts": {
     "dev": "yarn generate-json && astro dev",
